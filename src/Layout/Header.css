@@ -1,0 +1,13 @@
+
+@font-face{
+    font-family: 'headerfont';
+    src: url('../font/UNDERRATED') format ('truetype');
+}
+
+.header_text1{
+    font-family : 'headerfont';
+}
+
+.header_text2{
+    font-family: 'headerfont';
+}
