@@ -3,8 +3,7 @@ import React from 'react';
 const Strip = () =>{
     return (
     <div>
-        <img src="">
-        </img>
+        <img src=""></img>
     </div>)
 }
 
