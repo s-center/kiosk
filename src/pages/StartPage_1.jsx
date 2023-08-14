@@ -1,19 +1,31 @@
-import React from 'react';
-import LayoutOnlyHeader from '../components/Layout/Layout/LayoutOnlyHeader';
-import Header from '../components/Layout/Header/Header';
-import button from '../images/버튼예시.png';
+import React, {useState} from 'react';
+import Header from '../components/Layout/Header';
+import './StartPage_1.css';
+import ellips2 from '../images/header_Ellipse2.png';
+import ellips1 from '../images/header_Ellipse.png';
+import hand1 from '../images/header_천지창조1.png';
+import hand2 from '../images/header_천지창조2.png';
+import font from '../font/NotoSansKR-Regular.otf';
+
 const StartPage_1 = () =>{
-    return(<div>
+    const [rotateImages, setRotateImages] = useState(false);
+
+    const handleClick=()=>{
+        setRotateImages(!rotateImages);
+    };
+
+
+    return(<div className='container'>
      <Header/>
-     <div>
-     <View style={styles.container}>
-      <ImageButton
-        imageUrl={button} // 로컬 이미지 파일 경로
-        linkUrl=""
-      />
-    </View>
+    <div className ="image-container">
+        <img className={`image ${rotateImages ? 'rotate' : ''} hand1`} src={hand1}/>
+        <img className={`image ${rotateImages ? 'rotate' : ''} hand2`} src={hand2}/>   
+        <img className={`image ${rotateImages ? 'rotate' : ''} eclips2`} src={ellips2}/>
     </div>
-    
+     <img className="eclips1" src={ellips1}/>
+     <p className="touchButton" onClick={handleClick}>화면을 터치해보세요</p>
+
      </div>
     )
 }
+export default StartPage_1

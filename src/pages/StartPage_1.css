@@ -1,0 +1,74 @@
+.container{
+    position:relative;
+    margin:0;
+    padding:0;
+    border:0;
+    /*height:100vh;*/
+    height:2000px;
+    width:100vw;
+    background-color: black;
+}
+.eclips2{
+    width:100vw;
+    position:absolute;
+    top: 22.931vh;
+    margin:0;
+    padding:0;
+    border:0;
+    z-index: 0;
+}
+.eclips1{
+    width:88.839vw;
+    position:absolute;
+    left:50vw;
+    transform: translate(-50%,0);
+    top: 26.869vh;
+    margin:0;
+    padding:0;
+    border:0;
+    z-index: 1;
+}
+.hand1{
+    position:absolute;
+    width:101.79vw;
+     z-index: 2;
+     top:9h;
+    /*위치 설정 해야함.*/
+}
+.hand2{
+    position:absolute;
+    right:0;
+    width:84.484vw;
+    z-index: 3;
+    top:50vh;
+    /*위치 설정 해야함.*/
+}
+
+@font-face {
+    font-family: 'Notosans';
+    src: url('../font/NotoSansKR-Regular.otf') format('truetype');
+}
+.touchButton{
+    position: absolute;
+    top: 92.533vh;
+    left:50vw;
+    transform: translate(-50%,0);
+    font-size:4.878vw;
+    
+    color:white;
+      /*화면 배율 보고 결정*/
+    text-shadow: 1vw 1vw 10px rgba(255, 255, 255, 0.49);
+    z-index: 4;
+    font-family: 'Notosans';
+}
+
+
+  .image-container {
+    display: flex;
+    
+  }
+  
+  .rotate {
+    transform: rotate(90deg);
+    transition:1s;
+  }

@@ -1,10 +1,10 @@
+import StartPage_1 from './pages/StartPage_1.jsx';
 
 function App() {
 
-  return (
-    <h1>
-      Hello world1
-    </h1>
+  return (<div>
+    <StartPage_1/>
+    </div>
   )
 }
 
