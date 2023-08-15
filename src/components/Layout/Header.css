@@ -3,6 +3,8 @@
     left:50vw;
     top:3.475vh;
     transform: translate(-55%,0);
+    /*로고가 모양때문에 오른쪽으로 쏠린 것 같아 보여 조금 조정했는데 
+    의견 물어보기*/
     width: 76.74vw;
 
 }

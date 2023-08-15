@@ -2,7 +2,7 @@ import React from 'react';
 import { TouchableOpacity, Image } from 'react-native';
 import styles from './Button.css';
 
-const Button = ({ imageUrl, linkUrl }) => {
+const imageButton = ({ imageUrl, linkUrl }) => {
   const handlePress = () => {
     window.location.href = linkUrl;
   };
@@ -14,6 +14,12 @@ const Button = ({ imageUrl, linkUrl }) => {
   );
 };
 
-export default Button;
+const textButton=({text, linkUrl})=>{
+  const handlePress=()=>{
+    window.location.href=link
+  }
+}
+
+export default {imageButton,textButton};
 
 /* 버튼 사용 예시*/
