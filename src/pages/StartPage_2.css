@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .background{
     background-color: black;  
     height:100vh;
@@ -45,4 +46,8 @@
     left:30vw;
     font-size:3vw;
 
+=======
+.headerIMG{
+    width:auto
+>>>>>>> f7e46cdfee1eda0c40ebd53ba2ba05a9da50060d
 }
