@@ -1,10 +1,10 @@
-function App() {
+import { Redirect, Route, Switch } from 'wouter';
+import { Starting } from './pages/Starting.jsx';
 
-  return (
-    <h1>
-      Hello world1
-    </h1>
-  )
-}
+export const App = () => (
+  <Switch>
+    <Route path='/starting'> <Starting /> </Route>
 
-export default App
+    <Route><Redirect to='/starting' /> {/** Or should we redirect to 404 page? */}</Route>
+  </Switch>
+)
