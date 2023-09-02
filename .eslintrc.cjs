@@ -20,6 +20,10 @@ module.exports = {
     'react-refresh/only-export-components': ['warn', {
       allowConstantExport: true
     }],
-    'indent': ["error", 2]
+    'react/prop-types': 0,
+    'react/no-unknown-property': ['error', { ignore: ['css'] }],
+    'indent': ['error', 2],
+    'semi': ['error', 'never'],
+    'quotes': ['error', 'single']
   }
 };

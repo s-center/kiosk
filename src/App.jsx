@@ -1,10 +1,10 @@
-function App() {
+import { Redirect, Route, Switch } from 'wouter'
+import { Starting } from './pages/Starting'
 
-  return (
-    <h1>
-      Hello world1
-    </h1>
-  )
-}
+export const App = () => (
+  <Switch>
+    <Route path='/'> <Starting /> </Route>
 
-export default App
+    <Route><Redirect to='/' /> {/** Or should we redirect to 404 page? */} </Route>
+  </Switch>
+)
