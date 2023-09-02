@@ -3,8 +3,8 @@ import { Starting } from './pages/Starting';
 
 export const App = () => (
   <Switch>
-    <Route path='/starting'> <Starting /> </Route>
+    <Route path='/'> <Starting /> </Route>
 
-    <Route><Redirect to='/starting' /> {/** Or should we redirect to 404 page? */} </Route>
+    <Route><Redirect to='/' /> {/** Or should we redirect to 404 page? */} </Route>
   </Switch>
 )
