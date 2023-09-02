@@ -1,5 +1,5 @@
-import { Redirect, Route, Switch } from 'wouter';
-import { Starting } from './pages/Starting';
+import { Redirect, Route, Switch } from 'wouter'
+import { Starting } from './pages/Starting'
 
 export const App = () => (
   <Switch>
