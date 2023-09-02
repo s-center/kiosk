@@ -23,6 +23,7 @@ module.exports = {
     'react/prop-types': 0,
     'react/no-unknown-property': ['error', { ignore: ['css'] }],
     'indent': ['error', 2],
-    'semi': ['error', 'never']
+    'semi': ['error', 'never'],
+    'quotes': ['error', 'single']
   }
 };
