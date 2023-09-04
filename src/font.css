@@ -1,0 +1,14 @@
+@font-face {
+    font-family: KaiseiOpti-Regular;
+    src: url("./assets/KaiseiOpti-Regular.ttf");
+}
+
+@font-face {
+    font-family: NotoSansKR-Regular;
+    src: url("./assets/NotoSansKR-Regular.otf");
+    unicode-range: U+AC00-D7A3;
+}
+
+body {
+    font-family: NotoSansKR-Regular KaiseiOpti-Regular;
+}

@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 
@@ -7,7 +9,6 @@ import geryCircle from '../../assets/grey-circle.svg'
 import blackCircle from '../../assets/black-circle.svg'
 import handUp from '../../assets/hand-up.svg'
 import handDown from '../../assets/hand-down.svg'
-import { useState } from 'react';
 
 import { useLocation } from 'wouter';
 
