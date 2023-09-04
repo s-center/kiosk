@@ -1,13 +1,12 @@
 import { css } from '@emotion/react';
-import React from 'react';
 import {Link} from 'wouter';
 
 
 export const Button = ({buttonText, to, backgroundColor, opacity}) =>{
     
-    const buttonSyles =css`
-    background-color: ${backgroundColor || black}; //default color: black
-    opacity: ${opacity || 0.5}; //default opacity: 0.5
+  const buttonSyles =css`
+    background-color: ${backgroundColor || '#000'}; 
+    opacity: ${opacity || 0.5};
     display: flex;
     width: 648px;
     height: 132px;
@@ -22,12 +21,12 @@ export const Button = ({buttonText, to, backgroundColor, opacity}) =>{
             
     `
     
-    return(
-        <div>
-            <button
-                css={buttonSyles}>
-                <Link to={to} css={css`color:#FFF; text-decoration: none;`}>{buttonText}</Link>
-            </button>
-        </div>
-    );
+  return(
+    <div>
+      <button
+        css={buttonSyles}>
+        <Link to={to} css={css`color:#FFF; text-decoration: none;`}>{buttonText}</Link>
+      </button>
+    </div>
+  );
 }

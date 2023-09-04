@@ -1,5 +1,4 @@
 import { css } from '@emotion/react'
-import styled from '@emotion/styled'
 import {Button} from '../../components/Button';
 import { Logo } from '../../components/Logo'
 
@@ -7,9 +6,9 @@ import { Logo } from '../../components/Logo'
 
 
 export const Choosing = () =>{
-return(
+  return(
     <div 
-     css={css`
+      css={css`
     width: 100%;
     height: 100%;
   
@@ -21,7 +20,7 @@ return(
     justify-content: space-around;
   `}>
     
-    <div 
+      <div 
         css={css`
         width: 1748.227px;
         height: 300px;
@@ -30,8 +29,15 @@ return(
         top:20%;
         align-items: center;
         `}>
-            <p 
-                css={css`
+        <Logo css={css`
+               width: 100%;
+               height: 50%;
+               transform: translateX(-3%);
+               position: absolute;
+               top : -100%;
+                `}/>
+        <p 
+          css={css`
                 color: #FFF;
                 text-align: center;
                 font-family: 'Libre Baskerville', serif;
@@ -43,9 +49,9 @@ return(
                
                 `}>
                 You are
-            </p>
-            <p
-                css={css`
+        </p>
+        <p
+          css={css`
                 color: #FFF;
                 text-align:center;
                 font-family: 'Libre Baskerville', serif;
@@ -59,10 +65,10 @@ return(
         
                 `}>
                 Michelangelo
-            </p>
-    </div>
+        </p>
+      </div>
 
-    <div 
+      <div 
         css={css`
             position: relative;
             top:-7%;
@@ -76,28 +82,28 @@ return(
             font-family: 'Noto Sans KR', sans-serif;
             
         `}>
-            <p>
+        <p>
             당신이 머무는 공간에는 무슨 색의 향이 흐르나요     
-            </p>
+        </p>
 
-            <p>
+        <p>
             질문지를 통해서 당신이 마음껏 취할 수 있는         
-            </p>
+        </p>
 
-            <p>
+        <p>
             천국의 향을 조향해 보세요      
-            </p>
-    </div>
+        </p>
+      </div>
 
-    <div
+      <div
         css={css`
         position: relative;
      
         `}>
         <Button buttonText='디퓨저 조향 시작하기' to='/place' backgroundColor='#2E2E2E' opacity={1}/>
         <Button buttonText='제품 추천 받기' to ='/recommand' backgroundColor='#2E2E2E' opacity={1}/>
-    </div>
+      </div>
 
     </div>
-)
+  )
 }
