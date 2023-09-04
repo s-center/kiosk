@@ -9,6 +9,9 @@ import handUp from '../../assets/hand-up.svg'
 import handDown from '../../assets/hand-down.svg'
 import { useState } from 'react';
 
+import { useLocation } from 'wouter';
+
+
 const Background = styled.div`
   width: 100%;
   height: 100%;
@@ -22,15 +25,21 @@ const Background = styled.div`
 `
 
 export const Starting = () => {
-  const [isTouched, setTouchStatus] = useState(false)
+  const [isTouched, setTouchStatus] = useState(false);
+  const [, setLocation] = useLocation();
+
 
   const reaction = transformation => css`
       transform: ${transformation};
       transition: 1s;
     `
+  const handleTouch = () =>{
+  setTouchStatus(true);
+  setTimeout(() =>  {setLocation('/choosing');
+}, 1500);}
 
   return (
-    <Background onClick={() => setTouchStatus(true)}>
+    <Background onClick={() => {setTouchStatus(true); handleTouch();}}>
       <Logo
         css={css`
           width: 77%;
@@ -103,7 +112,9 @@ export const Starting = () => {
         alt='Left arm of human'
       />
 
-      <p css={css`font-weight: bold; font-size: 32px; color: white;`}>화면을 터치해보세요</p>
+      <p css={css`
+      font-weight: bold; font-size: 32px; color: white;
+      font-family: 'Noto Sans KR', sans-serif;`}>화면을 터치해보세요</p>
     </Background>
   )
 }
