@@ -21,7 +21,9 @@ module.exports = {
       allowConstantExport: true
     }],
     'react/prop-types': 0,
-    "react/no-unknown-property": ['error', { ignore: ['css'] }],
-    'indent': ["error", 2]
+    'react/no-unknown-property': ['error', { ignore: ['css'] }],
+    'indent': ['error', 2],
+    'semi': ['error', 'never'],
+    'quotes': ['error', 'single']
   }
 };
