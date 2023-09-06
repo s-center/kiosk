@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import {Link} from 'wouter';
+import { Link } from 'wouter';
 
 
 export const Button = ({buttonText, to, backgroundColor, opacity}) =>{
