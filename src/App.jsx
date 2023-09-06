@@ -1,6 +1,6 @@
-import { Redirect, Route, Switch } from 'wouter';
-import { Starting } from './pages/Starting';
-import { Choosing } from './pages/Choosing';
+import { Redirect, Route, Switch } from 'wouter'
+import { Starting } from './pages/Starting'
+import { Choosing } from './pages/Choosing'
 export const App = () => (
   <Switch>
     <Route exact path='/starting'> <Starting /> </Route>
