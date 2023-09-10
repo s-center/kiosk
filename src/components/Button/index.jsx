@@ -4,7 +4,7 @@ import { Link } from 'wouter'
 
 export const Button = ({ buttonText, to, className }) => {
     
-  const buttonSyles =css`
+  const buttonSyles = css`
     background-color: '#000'; 
     opacity: 0.5;
     display: flex;
@@ -23,8 +23,8 @@ export const Button = ({ buttonText, to, className }) => {
   return(
     <div>
       <button
-        css={[ buttonStyles, className ]}>
-        <Link to={to} css={css`color:#FFF; text-decoration: none;}>{buttonText}</Link>
+        css = {[ buttonStyles, className ]}>
+        <Link to = { to } css = { css`color:#FFF; text-decoration: none; }>{ buttonText }</Link>
       </button>
     </div>
   );
