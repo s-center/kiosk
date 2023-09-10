@@ -1,14 +1,14 @@
 import { css } from '@emotion/react'
-import {Button} from '../../components/Button';
+import { Button } from '../../components/Button';
 import { Logo } from '../../components/Logo'
 
 
 
 
-export const Choosing = () =>{
-  return(
+export const Choosing = () => {
+  return (
     <div 
-      css={css`
+      css = { css`
     width: 100%;
     height: 100%;
   
@@ -21,7 +21,7 @@ export const Choosing = () =>{
   `}>
     
       <div 
-        css={css`
+        css = { css`
         width: 1748.227px;
         height: 300px;
         flex-shrink: 0;
@@ -29,7 +29,8 @@ export const Choosing = () =>{
         top:20%;
         align-items: center;
         `}>
-        <Logo css={css`
+        
+        <Logo css = { css`
                width: 100%;
                height: 50%;
                transform: translateX(-3%);
@@ -37,7 +38,7 @@ export const Choosing = () =>{
                top : -100%;
                 `}/>
         <p 
-          css={css`
+          css = { css`
                 color: #FFF;
                 text-align: center;
                 font-family: 'Libre Baskerville', serif;
@@ -51,7 +52,7 @@ export const Choosing = () =>{
                 You are
         </p>
         <p
-          css={css`
+          css = { css`
                 color: #FFF;
                 text-align:center;
                 font-family: 'Libre Baskerville', serif;
@@ -69,7 +70,7 @@ export const Choosing = () =>{
       </div>
 
       <div 
-        css={css`
+        css = { css`
             position: relative;
             top:-7%;
             color: #FFF;
@@ -96,12 +97,12 @@ export const Choosing = () =>{
       </div>
 
       <div
-        css={css`
+        css = { css`
         position: relative;
      
         `}>
-        <Button buttonText='디퓨저 조향 시작하기' to='/place' backgroundColor='#2E2E2E' opacity={1}/>
-        <Button buttonText='제품 추천 받기' to ='/recommand' backgroundColor='#2E2E2E' opacity={1}/>
+        <Button buttonText ='디퓨저 조향 시작하기' to= '/place' backgroundColor = '#2E2E2E' opacity = { 1 }/>
+        <Button buttonText ='제품 추천 받기' to = '/recommand' backgroundColor = '#2E2E2E' opacity = { 1 }/>
       </div>
 
     </div>
