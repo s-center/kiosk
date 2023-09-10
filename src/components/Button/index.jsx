@@ -20,12 +20,10 @@ export const Button = ({ buttonText, to, className }) => {
     border:none;
     `
     
-  return(
-    <div>
+  return (
       <button
         css = {[ buttonStyles, className ]}>
         <Link to = { to } css = { css`color:#FFF; text-decoration: none; }>{ buttonText }</Link>
       </button>
-    </div>
   );
 }
