@@ -1,4 +1,5 @@
 import { css } from '@emotion/react'
+import '../../font.css'
 import { Link } from 'wouter'
 
 
@@ -16,7 +17,6 @@ export const Button = ({ buttonText, to, className }) => {
     border-radius: 15px;
     margin:20px;
     font-size: 30px;
-    font-family: 'Noto Sans KR', sans-serif;
     border:none;
     `
     
