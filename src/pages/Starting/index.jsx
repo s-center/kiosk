@@ -122,7 +122,9 @@ export const Starting = () => {
       />
 
       <p css={css`
-      font-weight: bold; font-size: 32px; color: white;
+      font-weight: bold; 
+      font-size: 32px; 
+      color: white;
       font-family: 'Noto Sans KR', sans-serif;`}>화면을 터치해보세요</p>
     </Background>
   )
