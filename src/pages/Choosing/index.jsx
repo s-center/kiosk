@@ -1,4 +1,5 @@
 import { css } from '@emotion/react'
+import '../../font.css'
 import { Button } from '../../components/Button';
 import { Logo } from '../../components/Logo'
 
@@ -43,7 +44,6 @@ export const Choosing = () => {
           css = { css`
             color: #FFF;
             text-align: center;
-            font-family: 'Libre Baskerville', serif;
             font-size: 27px;
             font-style: normal;
             line-height: 53.273% 
@@ -55,7 +55,6 @@ export const Choosing = () => {
           css = { css`
             color: #FFF;
             text-align:center;
-            font-family: 'Libre Baskerville', serif;
             font-size: 70px;
             font-style: normal;
             line-height: 45.339px;
@@ -77,7 +76,6 @@ export const Choosing = () => {
           font-weight: 500;
           line-height: 50px;
           text-transform: uppercase;
-          font-family: 'Noto Sans KR', sans-serif;
         `}>
         
         <p>
