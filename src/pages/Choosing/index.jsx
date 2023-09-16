@@ -44,7 +44,7 @@ export const Choosing = () =>{
                 font-size: 27px;
                 font-style: normal;
                 line-height: 53.273% 
-                letter-spacing: -4.255px;
+                letter-spacing: -3px;
                 text-transform: uppercase;
                
                 `}>
@@ -58,7 +58,7 @@ export const Choosing = () =>{
                 font-size: 70px;
                 font-style: normal;
                 line-height: 45.339px;
-                letter-spacing: -10.638px;
+                letter-spacing: -3px;
                 text-transform: uppercase;
                 position: relative;
                 top:10%;

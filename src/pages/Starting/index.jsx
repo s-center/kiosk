@@ -1,5 +1,5 @@
-import { useState } from 'react'
-
+import { useState, useEffect } from 'react'
+import { navigate } from 'wouter/use-location'
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 
@@ -9,9 +9,6 @@ import geryCircle from '../../assets/grey-circle.svg'
 import blackCircle from '../../assets/black-circle.svg'
 import handUp from '../../assets/hand-up.svg'
 import handDown from '../../assets/hand-down.svg'
-
-import { useLocation } from 'wouter';
-
 
 const Background = styled.div`
   width: 100%;
@@ -27,20 +24,31 @@ const Background = styled.div`
 
 export const Starting = () => {
   const [isTouched, setTouchStatus] = useState(false);
-  const [, setLocation] = useLocation();
+
 
 
   const reaction = transformation => css`
       transform: ${transformation};
       transition: 1s;
     `
-  const handleTouch = () =>{
+  const handleTransitionEnd = () => {
+      navigate('/choosing');
+  };
+  
+  useEffect(() => {
+    const backgroundElement = document.getElementById("background");
+    backgroundElement.addEventListener("transitionend", handleTransitionEnd);
+    return () => {
+      backgroundElement.removeEventListener("transitioned", handleTransitionEnd);
+    };
+  }, []);
+  
+  const handleTouch = () => {
   setTouchStatus(true);
-  setTimeout(() =>  {setLocation('/choosing');
-}, 1500);}
-
+  }
+  
   return (
-    <Background onClick={() => {setTouchStatus(true); handleTouch();}}>
+    <Background  id="background" onClick={() => {setTouchStatus(true); handleTouch();}}>
       <Logo
         css={css`
           width: 77%;
@@ -114,7 +122,9 @@ export const Starting = () => {
       />
 
       <p css={css`
-      font-weight: bold; font-size: 32px; color: white;
+      font-weight: bold; 
+      font-size: 32px; 
+      color: white;
       font-family: 'Noto Sans KR', sans-serif;`}>화면을 터치해보세요</p>
     </Background>
   )
