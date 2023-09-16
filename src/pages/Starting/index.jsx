@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useLocation } from 'wouter'
+import { navigate } from 'wouter/use-location'
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 
@@ -24,20 +24,31 @@ const Background = styled.div`
 
 export const Starting = () => {
   const [isTouched, setTouchStatus] = useState(false);
-  const [, setLocation] = useLocation();
+  const navigateToPage = (to) => navigate(to);
 
 
   const reaction = transformation => css`
       transform: ${transformation};
       transition: 1s;
     `
-  const handleTouch = () =>{
+  const handleTransitionEnd = () => {
+      navigate('/choosing');
+  };
+  
+  useEffect(() => {
+    const backgroundElement = document.getElementById("background");
+    backgroundElement.addEventListener("transitionend", handleTransitionEnd);
+    return () => {
+      backgroundElement.removeEventListener("transitioned", handleTransitionEnd);
+    };
+  }, []);
+  
+  const handleTouch = () => {
   setTouchStatus(true);
-  setTimeout(() =>  {setLocation('/choosing');
-}, 1500);}
-
+  }
+  
   return (
-    <Background onClick={() => {setTouchStatus(true); handleTouch();}}>
+    <Background  id="background" onClick={() => {setTouchStatus(true); handleTouch();}}>
       <Logo
         css={css`
           width: 77%;
