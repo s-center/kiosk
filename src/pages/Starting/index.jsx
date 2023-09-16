@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { navigate } from 'wouter/use-location'
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
@@ -24,7 +24,7 @@ const Background = styled.div`
 
 export const Starting = () => {
   const [isTouched, setTouchStatus] = useState(false);
-  const navigateToPage = (to) => navigate(to);
+
 
 
   const reaction = transformation => css`
