@@ -1,7 +1,5 @@
-import { css } from '@emotion/react'
 import '../../font.css'
 import { Link } from 'wouter'
-
 
 export const Button = ({ buttonText, to, className }) => {
     
