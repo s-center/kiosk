@@ -26,29 +26,14 @@ export const Starting = () => {
   const [isTouched, setTouchStatus] = useState(false);
 
 
-
   const reaction = transformation => css`
       transform: ${transformation};
       transition: 1s;
     `
-  const handleTransitionEnd = () => {
-      navigate('/choosing');
-  };
-  
-  useEffect(() => {
-    const backgroundElement = document.getElementById("background");
-    backgroundElement.addEventListener("transitionend", handleTransitionEnd);
-    return () => {
-      backgroundElement.removeEventListener("transitioned", handleTransitionEnd);
-    };
-  }, []);
-  
-  const handleTouch = () => {
-  setTouchStatus(true);
-  }
+  const condition = true;
   
   return (
-    <Background  id="background" onClick={() => {setTouchStatus(true); handleTouch();}}>
+   <Background id="background" onClick={() => setTouchStatus(true)}{...(condition ? { onTransitionEnd: () => navigate('/choosing') } : {})}>
       <Logo
         css={css`
           width: 77%;
