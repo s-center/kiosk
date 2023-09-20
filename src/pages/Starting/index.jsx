@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { navigate } from 'wouter/use-location'
-import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 
 import { Logo } from '../../components/Logo'
@@ -110,7 +109,7 @@ export const Starting = () => {
       font-weight: bold; 
       font-size: 32px; 
       color: white;
-      font-family: 'Noto Sans KR', sans-serif;`}>화면을 터치해보세요</p>
+      `}>화면을 터치해보세요</p>
     </Background>
   )
 }
