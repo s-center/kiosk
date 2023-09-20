@@ -1,5 +1,4 @@
 import { css } from '@emotion/react'
-import '../../font.css'
 import { Button } from '../../components/Button';
 import { Logo } from '../../components/Logo'
 
