@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { navigate } from 'wouter/use-location'
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
