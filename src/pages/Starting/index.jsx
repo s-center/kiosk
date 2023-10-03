@@ -23,14 +23,14 @@ const Background = styled.div`
 `
 
 export const Starting = () => {
-  const [isTouched, setTouchStatus] = useState(false);
+  const [isTouched, setTouchStatus] = useState(false)
 
 
   const reaction = transformation => css`
       transform: ${transformation};
       transition: 1s;
     `
-  const condition = true;
+  const condition = true
 
   return (
    <Background id="background" onClick={() => setTouchStatus(true)}{...(condition ? { onTransitionEnd: () => navigate('/choosing') } : {})}>

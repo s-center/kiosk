@@ -1,5 +1,5 @@
 import { css } from '@emotion/react'
-import { Button } from '../../components/Button';
+import { Button } from '../../components/Button'
 import { Logo } from '../../components/Logo'
 
 
@@ -7,7 +7,7 @@ import { Logo } from '../../components/Logo'
 
 export const Choosing = () => {
   return (
-    <div 
+    <div
       css = { css`
         width: 100%;
         height: 100%;
@@ -19,8 +19,8 @@ export const Choosing = () => {
         align-items: center;
         justify-content: space-around;
       `}>
-    
-      <div 
+
+      <div
         css = { css`
           width: 1748.227px;
           height: 300px;
@@ -29,8 +29,8 @@ export const Choosing = () => {
           top:20%;
           align-items: center;
         `}>
-        
-        <Logo 
+
+        <Logo
           css = { css`
             width: 100%;
             height: 50%;
@@ -38,8 +38,8 @@ export const Choosing = () => {
             position: absolute;
             top : -100%;
           `}/>
-        
-        <p 
+
+        <p
           css = { css`
             color: #FFF;
             text-align: center;
@@ -64,7 +64,7 @@ export const Choosing = () => {
           `}> Michelangelo </p>
       </div>
 
-      <div 
+      <div
         css = { css`
           position: relative;
           top:-7%;
@@ -76,29 +76,29 @@ export const Choosing = () => {
           line-height: 50px;
           text-transform: uppercase;
         `}>
-        
+
         <p>
-            당신이 머무는 공간에는 무슨 색의 향이 흐르나요     
+            당신이 머무는 공간에는 무슨 색의 향이 흐르나요
         </p>
 
         <p>
-            질문지를 통해서 당신이 마음껏 취할 수 있는         
+            질문지를 통해서 당신이 마음껏 취할 수 있는
         </p>
 
         <p>
-            천국의 향을 조향해 보세요      
+            천국의 향을 조향해 보세요
         </p>
-        
+
       </div>
 
       <div
         css = { css`
           position: relative;
          `}>
-        
+
         <Button buttonText ='디퓨저 조향 시작하기' to= '/place' className="steerStartButton"/>
         <Button buttonText ='제품 추천 받기' to = '/recommand' className="recommedButton"/>
-  
+
       </div>
     </div>
   )
