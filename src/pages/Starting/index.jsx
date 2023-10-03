@@ -33,7 +33,7 @@ export const Starting = () => {
   const condition = true
 
   return (
-   <Background id="background" onClick={() => setTouchStatus(true)}{...(condition ? { onTransitionEnd: () => navigate('/choosing') } : {})}>
+    <Background id="background" onClick={() => setTouchStatus(true)}{...(condition ? { onTransitionEnd: () => navigate('/choosing') } : {})}>
       <Logo
         css={css`
           width: 77%;
