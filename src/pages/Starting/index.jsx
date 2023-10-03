@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { navigate } from 'wouter/use-location'
+import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 
 import { Logo } from '../../components/Logo'
@@ -30,7 +31,7 @@ export const Starting = () => {
       transition: 1s;
     `
   const condition = true;
-  
+
   return (
    <Background id="background" onClick={() => setTouchStatus(true)}{...(condition ? { onTransitionEnd: () => navigate('/choosing') } : {})}>
       <Logo
