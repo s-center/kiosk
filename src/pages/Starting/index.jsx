@@ -30,10 +30,9 @@ export const Starting = () => {
       transform: ${transformation};
       transition: 1s;
     `
-  const condition = true
 
   return (
-    <Background id="background" onClick={() => setTouchStatus(true)}{...(condition ? { onTransitionEnd: () => navigate('/choosing') } : {})}>
+    <Background id="background" onClick={() => setTouchStatus(true)} onTransitionEnd={() => isTouched && navigate('/choosing')}>
       <Logo
         css={css`
           width: 77%;
