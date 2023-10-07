@@ -1,8 +1,9 @@
 import { Link } from 'wouter'
+import { css } from '@emotion/react'
 
 export const Button = ({ buttonText, to, className }) => {
-    
-  const buttonSyles = css`
+
+  const buttonStyles = css`
     background-color: '#000'; 
     opacity: 0.5;
     display: flex;
@@ -16,11 +17,10 @@ export const Button = ({ buttonText, to, className }) => {
     font-size: 30px;
     border:none;
     `
-    
+
   return (
-      <button
-        css = {[ buttonStyles, className ]}>
-        <Link to = { to } css = { css`color:#FFF; text-decoration: none; `}>{ buttonText }</Link>
-      </button>
-  );
+    <button css={[ buttonStyles, className ]}>
+      <Link to = { to } css ={ css`color:#FFF; text-decoration: none; `}>{ buttonText }</Link>
+    </button>
+  )
 }
