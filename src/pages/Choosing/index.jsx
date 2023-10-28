@@ -1,8 +1,6 @@
 import { css } from '@emotion/react'
-import {Button} from '../../components/Button';
+import { Button } from '../../components/Button'
 import { Logo } from '../../components/Logo'
-
-
 
 
 export const Choosing = () =>{
@@ -100,7 +98,8 @@ export const Choosing = () =>{
         position: relative;
      
         `}>
-        <Button buttonText='디퓨저 조향 시작하기' to='/place' backgroundColor='#2E2E2E' opacity={1}/>
+       
+        <Button buttonText='디퓨저 조향 시작하기' to='/scentchoosing' backgroundColor='#2E2E2E' opacity={1}/>
         <Button buttonText='제품 추천 받기' to ='/recommand' backgroundColor='#2E2E2E' opacity={1}/>
       </div>
 
