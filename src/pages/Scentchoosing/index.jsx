@@ -6,7 +6,7 @@ export const scentChoosing = () => {
         <div css = {css`
             width: 100%;
             height: 100%;`}>
-            <Layout font = "place" downBanner=""/>
+            <Layout downBanner=""> <div><p css={css`color: white;`}>더미디브</p></div></Layout>
         </div>
 
     )

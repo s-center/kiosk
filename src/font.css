@@ -9,6 +9,10 @@
     unicode-range: U+AC00-D7A3;
 }
 
+@font-face {
+    font-family: coolvetica;
+    src: url('./assets/coolvetica.otf');
+}
 body {
     font-family: NotoSansKR-Regular KaiseiOpti-Regular;
 }
