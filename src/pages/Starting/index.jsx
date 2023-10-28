@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { navigate } from 'wouter/use-location'
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
@@ -23,7 +23,8 @@ const Background = styled.div`
 `
 
 export const Starting = () => {
-  const [isTouched, setTouchStatus] = useState(false);
+
+  const [isTouched, setTouchStatus] = useState(false)
 
 
 
@@ -31,24 +32,10 @@ export const Starting = () => {
       transform: ${transformation};
       transition: 1s;
     `
-  const handleTransitionEnd = () => {
-      navigate('/choosing');
-  };
-  
-  useEffect(() => {
-    const backgroundElement = document.getElementById("background");
-    backgroundElement.addEventListener("transitionend", handleTransitionEnd);
-    return () => {
-      backgroundElement.removeEventListener("transitioned", handleTransitionEnd);
-    };
-  }, []);
-  
-  const handleTouch = () => {
-  setTouchStatus(true);
-  }
-  
+
   return (
-    <Background  id="background" onClick={() => {setTouchStatus(true); handleTouch();}}>
+    <Background id="background" onClick={() => setTouchStatus(true)} onTransitionEnd={() => isTouched && navigate('/choosing')}>
+
       <Logo
         css={css`
           width: 77%;
@@ -125,7 +112,9 @@ export const Starting = () => {
       font-weight: bold; 
       font-size: 32px; 
       color: white;
-      font-family: 'Noto Sans KR', sans-serif;`}>화면을 터치해보세요</p>
+
+      `}>화면을 터치해보세요</p>
+
     </Background>
   )
 }
