@@ -20,7 +20,6 @@ export const Layout= ( props ) =>{
         font-family: coolvetica;
         padding: 0;
         letter-spacing:3px;
-        font-weight: 600;
         color: ${buttonColor};
     `;
     
