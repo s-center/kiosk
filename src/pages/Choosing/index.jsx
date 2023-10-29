@@ -17,6 +17,7 @@ export const Choosing = () => {
         justify-content: space-around;
       `}>
 
+
       <div
         css = { css`
           width: 1748.227px;
@@ -38,6 +39,7 @@ export const Choosing = () => {
 
         <p
           css = { css`
+
             color: #FFF;
             text-align: center;
             font-size: 27px;
@@ -89,12 +91,14 @@ export const Choosing = () => {
       </div>
 
       <div
+
         css = { css`
           position: relative;
          `}>
 
-        <Button buttonText ='디퓨저 조향 시작하기' to= '/place' className="steerStartButton"/>
+        <Button buttonText ='디퓨저 조향 시작하기' to= '/scentchoosing' className="steerStartButton"/>
         <Button buttonText ='제품 추천 받기' to = '/recommand' className="recommedButton"/>
+
 
       </div>
     </div>

@@ -23,7 +23,9 @@ const Background = styled.div`
 `
 
 export const Starting = () => {
+
   const [isTouched, setTouchStatus] = useState(false)
+
 
 
   const reaction = transformation => css`
@@ -33,6 +35,7 @@ export const Starting = () => {
 
   return (
     <Background id="background" onClick={() => setTouchStatus(true)} onTransitionEnd={() => isTouched && navigate('/choosing')}>
+
       <Logo
         css={css`
           width: 77%;
@@ -109,7 +112,9 @@ export const Starting = () => {
       font-weight: bold; 
       font-size: 32px; 
       color: white;
+
       `}>화면을 터치해보세요</p>
+
     </Background>
   )
 }
