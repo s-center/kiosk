@@ -23,7 +23,9 @@ export const Slider = ({ onSelect, className, children: slides }) => {
             cloneElement(child, {
               onSelect,
               onDiscard: () => {
-                const candidate = slides.filter(({ props: { id }}) => visibleEntry.some(({ props: { idOfAlreadyVisibleSlide }}) => id === idOfAlreadyVisibleSlide))[0]
+                const candidate = slides.filter(({ props: { id }}) => visibleEntry.every(({ props: { id: idOfAlreadyVisibleSlide }}) => id !== idOfAlreadyVisibleSlide))[0]
+
+                console.log(candidate)
 
                 setVisibleEntry(visibleEntry.slice(1).concat([candidate ?? visibleEntry[0]]))
               },
