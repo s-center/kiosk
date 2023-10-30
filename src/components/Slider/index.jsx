@@ -58,6 +58,8 @@ export const Slide = ({ id, onSelect, onDiscard, isFocused, className, children 
       onMouseDown={e => isFocused && setDragStartPoint(e.clientY)}
       onMouseMove={e => dragStartPoint && setDraggedLength(e.clientY - dragStartPoint) }
       onMouseUp={e => {
+        if (!dragStartPoint) return
+
         const draggedLength = e.clientY - dragStartPoint
 
         if (isFocused && draggedLength < 30 && draggedLength > -30) {
