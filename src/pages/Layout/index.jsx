@@ -49,7 +49,7 @@ export const Layout= ( props ) =>{
         align-items: center;
         justify-content: space-around;
         z-index: -1;
-      `}>
+      `} className={props.className}>
 
       <Logo className= "scentchoosingLogo"
         css = {css`
