@@ -84,7 +84,7 @@ export const Layout= ( props ) =>{
         </Link>
       </div>
 
-      <div className="downBanner" css = {downBanner}>
+      <div className="downBanner" css = {downBanner} style={props.noDownBanner ? { display: 'none' } : {}}>
         <Link to ='/scentTop'>
           <button css={buttonStyle}>TOP</button>
         </Link>
@@ -97,6 +97,8 @@ export const Layout= ( props ) =>{
       </div>
 
       <main css = {css`
+                            height: 55%;
+                            width: 100%;
                             display: flex;
                             align-items: center;
                             justify-content: space-around;`}>
