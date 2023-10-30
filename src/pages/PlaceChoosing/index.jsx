@@ -10,7 +10,7 @@ import office from '../../assets/office.png'
 import shoeCloset from '../../assets/shoe-closet.png'
 
 const Card = ({ id, image, ...props }) => (
-  <Slide id={id} css={css`width: 80%; height: 70%; top: 60%`} {...props}>
+  <Slide id={id} css={css`width: 42%; height: 70%; top: 60%`} {...props}>
     <img src={image} css={css`width: 100%; height: 100%; object-fit: contain; pointer-events: none;`} onDragStart={() => false} />
   </Slide>
 )
