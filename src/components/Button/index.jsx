@@ -5,7 +5,7 @@ import '../../../src/font.css'
 export const Button = ({ buttonText, to, className, linkStyle }) => {
 
   const buttonStyles = css`
-    background-color: gray; 
+    background-color: rgba(255,255,255,0.5); 
     opacity: 1;
     display: flex;
     width: 648px;
@@ -19,7 +19,7 @@ export const Button = ({ buttonText, to, className, linkStyle }) => {
     border:none;
     font-family : NotoSansKR-Regular;
     `
-
+    
   return (
     <button css={[ buttonStyles, className ]}>
       <Link to = { to } css ={ [css`color: white; text-decoration: none; `, linkStyle ]}>{ buttonText }</Link>

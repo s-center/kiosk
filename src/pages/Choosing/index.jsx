@@ -1,7 +1,7 @@
 import { css } from '@emotion/react'
 import { Button } from '../../components/Button'
 import { Logo } from '../../components/Logo'
-
+import Waterdrop from '../../assets/waterdrop.mp4'
 export const Choosing = () => {
   return (
     <div
@@ -15,8 +15,15 @@ export const Choosing = () => {
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
+        z-index:-2;
       `}>
-
+    <video
+        src={Waterdrop}
+        alt='물방울'
+        css={css`z-index: 1; width: 100%; heigt: 100%; position: fixed; top: 0%; left:0;`}
+        autoPlay
+        loop
+    />
 
       <div
         css = { css`
@@ -35,6 +42,7 @@ export const Choosing = () => {
             transform: translateX(-3%);
             position: absolute;
             top : -100%;
+            z-index:9;
           `}/>
 
         <p
@@ -47,6 +55,7 @@ export const Choosing = () => {
             line-height: 53.273% 
             letter-spacing: -4.255px;
             text-transform: uppercase;
+            z-index:11;
             `}>
                 You are </p>
         <p
@@ -60,6 +69,7 @@ export const Choosing = () => {
             text-transform: uppercase;
             position: relative;
             top:10%;
+            z-index:9;
           `}> Michelangelo </p>
       </div>
 
@@ -74,6 +84,7 @@ export const Choosing = () => {
           font-weight: 500;
           line-height: 50px;
           text-transform: uppercase;
+          z-index:9;
         `}>
 
         <p>
@@ -87,13 +98,14 @@ export const Choosing = () => {
         <p>
             천국의 향을 조향해 보세요
         </p>
-
+        
       </div>
 
       <div
 
         css = { css`
           position: relative;
+          z-index:10;
          `}>
 
         <Button buttonText ='디퓨저 조향 시작하기' to= '/placechoosing' className="steerStartButton"/>
