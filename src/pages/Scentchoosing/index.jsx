@@ -1,13 +1,18 @@
 import React from 'react'
 import { Layout } from '../Layout/index'
 import { css } from '@emotion/react'
-export const scentChoosing = () => {
-    return (
-        <div css = {css`
+import { NextPageButton } from '../../components/Button/nextPageButton'
+
+export const ScentChoosing = () => {
+  return (
+    <div css = {css`
             width: 100%;
             height: 100%;`}>
-            <Layout downBanner=""> <div><p css={css`color: white;`}>더미디브</p></div></Layout>
-        </div>
+      <Layout downBanner=""> 
+        <div><p>이거 임시고 원래는 mydiffuser로 가는 게 아니여</p></div>
+        <NextPageButton to='/myscent'/>
+      </Layout>
+    </div>
 
-    )
+  )
 }
