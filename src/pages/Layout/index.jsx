@@ -28,7 +28,7 @@ export const Layout= ( props ) =>{
   const [ buttonColor, setButtonColor ] = useState( '#808080' )
   const [userPreference, setUserPreference] = useContext(UserPreference) // TODO: Selection cancellation
   const [location] = useLocation()
-  const { pos } = useContext(ScentSelectionStatus)
+  const { pos , setPos } = useContext(ScentSelectionStatus)
   const changeButtonColor = () => {
     setButtonColor( '#ffffff' )
   }
@@ -107,15 +107,9 @@ export const Layout= ( props ) =>{
       </div>
 
       <div className="downBanner" css = {downBanner} style={props.noDownBanner ? { display: 'none' } : {}}>
-        <Link to ='/scentTop'>
-          <button css={[buttonStyle, css`${pos === 0 ? 'color: white;' : ''}`]}>TOP</button>
-        </Link>
-        <Link to ='/scentMiddle'>
-          <button css={[buttonStyle, css`${pos === 1 ? 'color: white;' : ''}`]}>MIDDLE</button>
-        </Link>
-        <Link to ='/scentBase'>
-          <button css={[buttonStyle, css`${pos === 2 ? 'color: white;' : ''}`]}>BASE</button>
-        </Link>
+        <button css={[buttonStyle, css`${pos === 0 ? 'color: white;' : ''}`]} onClick={() => setPos(0)}>TOP</button>
+        <button css={[buttonStyle, css`${pos === 1 ? 'color: white;' : ''}`]} onClick={() => setPos(1)}>MIDDLE</button>
+        <button css={[buttonStyle, css`${pos === 2 ? 'color: white;' : ''}`]} onClick={() => setPos(2)}>BASE</button>
       </div>
 
       <main css = {[css`

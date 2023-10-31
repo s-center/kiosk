@@ -17,8 +17,7 @@ const SlideIndexIndicator = ({ index, length }) => (
 )
 
 export const TripleRowSlider = ({ onSelect, className, children: groups }) => {
-  const [currentGroupIndex, setCurrentGroupIndex] = useState(0)
-  const { setPos } = useContext(ScentSelectionStatus)
+  const { pos: currentGroupIndex, setPos: setCurrentGroupIndex } = useContext(ScentSelectionStatus)
 
   return (
     <div className={className}>
@@ -38,7 +37,6 @@ export const TripleRowSlider = ({ onSelect, className, children: groups }) => {
           const nextIndex = currentGroupIndex + 1 < Children.count(groups) ? currentGroupIndex + 1 : 0
 
           setCurrentGroupIndex(nextIndex)
-          setPos(nextIndex)
         }}
       />
       <NextPageButton
@@ -47,7 +45,6 @@ export const TripleRowSlider = ({ onSelect, className, children: groups }) => {
           const nextIndex = currentGroupIndex - 1 >= 0 ? currentGroupIndex - 1 : Children.count(groups) - 1
 
           setCurrentGroupIndex(nextIndex)
-          setPos(nextIndex)
         }}
       />
     </div>
