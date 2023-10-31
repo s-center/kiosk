@@ -1,6 +1,6 @@
 import { Children, createContext, useContext, useState } from 'react'
 import { css } from '@emotion/react'
-import { NextPageButton } from '../Button/nextPageButton.jsx';
+import { NextPageButton } from '../Button/nextPageButton.jsx'
 
 const TripleRowSliderContext = createContext({
   onSelect: () => {}
@@ -37,14 +37,19 @@ export const TripleRowSlider = ({ onSelect, className, children: groups }) => {
   )
 }
 
-export const Group = ({ className, children: rows }) => (
-  <div css={css`display: flex; flex-direction: column; margin-top: 10%;`} className={className}>
-    {rows}
-  </div>
+const Grouped = createContext(null)
+
+export const Group = ({ name, className, children: rows }) => (
+  <Grouped.Provider value={name}>
+    <div css={css`display: flex; flex-direction: column; margin-top: 10%;`} className={className}>
+      {rows}
+    </div>
+  </Grouped.Provider>
 )
 
 export const Row = ({ id, image, className }) => {
   const { onSelect } = useContext(TripleRowSliderContext)
+  const name = useContext(Grouped)
 
-  return <img css={css`width: 100%; height: 32%; margin-bottom: -5%;`} src={image} onClick={() => onSelect(id)} className={className} />
+  return <img css={css`width: 100%; height: 32%; margin-bottom: -5%;`} src={image} onClick={() => onSelect(id, name)} className={className} />
 }
