@@ -13,6 +13,11 @@
     font-family: coolvetica;
     src: url('./assets/coolvetica.otf');
 }
-body {
-    font-family: NotoSansKR-Regular KaiseiOpti-Regular;
-}
+
+@font-face {
+    font-family: Baskerville;
+    src: url('./assets/baskeville.ttf');}
+
+    body {
+        font-family: NotoSansKR-Regular KaiseiOpti-Regular;
+    }

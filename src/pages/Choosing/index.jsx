@@ -5,7 +5,7 @@ import Waterdrop from '../../assets/waterdrop.mp4'
 export const Choosing = () => {
   return (
     <div
-      css = { css`
+      css={css`
         width: 100%;
         height: 100%;
       
@@ -15,7 +15,7 @@ export const Choosing = () => {
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
-        z-index:-2;
+        z-index:-1;
       `}>
       <video
         src={Waterdrop}
@@ -26,7 +26,7 @@ export const Choosing = () => {
       />
 
       <div
-        css = { css`
+        css={css`
           width: 1748.227px;
           height: 300px;
           flex-shrink: 0;
@@ -36,17 +36,17 @@ export const Choosing = () => {
         `}>
 
         <Logo
-          css = { css`
+          css={css`
             width: 100%;
             height: 50%;
             transform: translateX(-3%);
             position: absolute;
             top : -100%;
             z-index:9;
-          `}/>
+          `} />
 
         <p
-          css = { css`
+          css={css`
 
             color: #FFF;
             text-align: center;
@@ -55,11 +55,12 @@ export const Choosing = () => {
             line-height: 53.273% 
             letter-spacing: -4.255px;
             text-transform: uppercase;
-            z-index:11;
+            z-index:9;
+            font-family:Baskerville; 
             `}>
-                You are </p>
+          You are </p>
         <p
-          css = { css`
+          css={css`
             color: #FFF;
             text-align:center;
             font-size: 70px;
@@ -70,11 +71,12 @@ export const Choosing = () => {
             position: relative;
             top:10%;
             z-index:9;
+            font-family:Baskerville; 
           `}> Michelangelo </p>
       </div>
 
       <div
-        css = { css`
+        css={css`
           position: relative;
           top:-7%;
           color: #FFF;
@@ -85,31 +87,32 @@ export const Choosing = () => {
           line-height: 50px;
           text-transform: uppercase;
           z-index:9;
+          font-family: NotoSansKR-Regular;
         `}>
 
         <p>
-            당신이 머무는 공간에는 무슨 색의 향이 흐르나요
+          당신이 머무는 공간에는 무슨 색의 향이 흐르나요
         </p>
 
         <p>
-            질문지를 통해서 당신이 마음껏 취할 수 있는
+          질문지를 통해서 당신이 마음껏 취할 수 있는
         </p>
 
         <p>
-            천국의 향을 조향해 보세요
+          천국의 향을 조향해 보세요
         </p>
-        
+
       </div>
 
       <div
 
-        css = { css`
+        css={css`
           position: relative;
-          z-index:10;
+          z-index:9;
          `}>
 
-        <Button buttonText ='디퓨저 조향 시작하기' to= '/placechoosing' className="steerStartButton"/>
-        <Button buttonText ='제품 추천 받기' to = '/recommand' className="recommedButton"/>
+        <Button buttonText='디퓨저 조향 시작하기' to='/placechoosing' className="steerStartButton" />
+        <Button buttonText='제품 추천 받기' to='/recommand' className="recommedButton" />
 
 
       </div>

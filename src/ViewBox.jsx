@@ -13,5 +13,4 @@ export const ViewBox = ({ children }) => (
     `}
   >
     {children}
-  </div>
-)
+  </div>)
