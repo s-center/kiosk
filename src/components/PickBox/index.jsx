@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { css } from '@emotion/react'
 
 export const PickBox = ( props ) => {
@@ -11,7 +11,7 @@ export const PickBox = ( props ) => {
   }
 
   return(
-    <div className = {props.className} 
+    <div className = {props.className}
       css = {css`
                         background-color: rgba(255,255,255,0.5);
                         width: 140px;
@@ -20,9 +20,9 @@ export const PickBox = ( props ) => {
                         margin: 0;`}
 
       onClick = {handleDivClick}>
-               
-      <img src = {props.img} 
-        alt ={props.className} 
+
+      <img src = {props.img}
+        alt ={props.className}
         css = {css`
                                     opacity : imageOpacity;
                                     display: showX ? 'none' : 'block';
@@ -44,15 +44,15 @@ export const PickBox = ( props ) => {
                                 justify-content: space-around;
                                 `}
 
-        onClick = {(e) => { 
-          e.stopProgagation() 
-          setShowX(false)}}> 
+        onClick = {(e) => {
+          e.stopProgagation()
+          setShowX(false)}}>
         <p css = {css`
                                                 font-size: 140px;
                                                 font-family: xx;
-                                                `}>X</p> 
+                                                `}>X</p>
       </div>)}
-                        
+
     </div>
   )
 }

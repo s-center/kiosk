@@ -96,7 +96,7 @@ export const Choosing = () => {
           position: relative;
          `}>
 
-        <Button buttonText ='디퓨저 조향 시작하기' to= '/scentchoosing' className="steerStartButton"/>
+        <Button buttonText ='디퓨저 조향 시작하기' to= '/placechoosing' className="steerStartButton"/>
         <Button buttonText ='제품 추천 받기' to = '/recommand' className="recommedButton"/>
 
 

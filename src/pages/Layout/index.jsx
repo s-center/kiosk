@@ -1,17 +1,16 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Logo } from '../../components/Logo'
 import { css } from '@emotion/react'
 import { Link } from 'wouter'
 import { PickBox } from '../../components/PickBox'
 //props로 각 페이지 별 베너의 폰트 컬러, downer 배너 표시 여부 결정 가능
-export const Layout= ( props ) =>{ 
+export const Layout= ( props ) =>{
 
   const [ buttonColor, setButtonColor ] = useState( '#808080' )
   const changeButtonColor = () => {
     setButtonColor( '#ffffff' )
   }
 
-   
   const buttonStyle = css`
         margin: 0;
         font-size: 400%;
@@ -22,7 +21,7 @@ export const Layout= ( props ) =>{
         letter-spacing:3px;
         color: ${buttonColor};
     `
-    
+
   const downBanner = css`
         display: flex;
         flex-direction: row;
@@ -38,7 +37,7 @@ export const Layout= ( props ) =>{
 
 
   return (
-       
+
     <div css={css`
         width: 100%;
         height: 100%;
@@ -49,7 +48,7 @@ export const Layout= ( props ) =>{
         align-items: center;
         justify-content: space-around;
         z-index: -1;
-      `}>
+      `} className={props.className}>
 
       <Logo className= "scentchoosingLogo"
         css = {css`
@@ -81,10 +80,11 @@ export const Layout= ( props ) =>{
         </Link>
         <Link to ='/scentchoosing'>
           <button css={buttonStyle} onClick = {changeButtonColor}>SCENT</button>
-        </Link>           
+
+        </Link>
       </div>
 
-      <div className="downBanner" css = {downBanner}>
+      <div className="downBanner" css = {downBanner} style={props.noDownBanner ? { display: 'none' } : {}}>
         <Link to ='/scentTop'>
           <button css={buttonStyle}>TOP</button>
         </Link>
@@ -92,11 +92,14 @@ export const Layout= ( props ) =>{
           <button css={buttonStyle}>MIDDLE</button>
         </Link>
         <Link to ='/scentBase'>
-          <button css={buttonStyle}>BASE</button>  
-        </Link>             
+
+          <button css={buttonStyle}>BASE</button>
+        </Link>
       </div>
 
       <main css = {css`
+                            height: 55%;
+                            width: 100%;
                             display: flex;
                             align-items: center;
                             justify-content: space-around;`}>
