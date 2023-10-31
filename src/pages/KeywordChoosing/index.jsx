@@ -43,7 +43,7 @@ export const KeywordChoosing = () => {
       for='162' fog='66' fob='81'
       fir='211' fig='110' fib='127'
       maxRadius={400} minRadius={100} gradient={0.7} totalParticles={300}
-      vx={1} vy={2}
+      vx={0.5} vy={0.5}
       key='calm'
     />,
     <Keyword className='passionate'
