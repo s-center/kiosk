@@ -1,6 +1,6 @@
 import { Children, createContext, useContext, useState } from 'react'
 import { css } from '@emotion/react'
-import { NextPageButton } from '../Button/nextPageButton.jsx';
+import { NextPageButton } from '../Button/nextPageButton.jsx'
 
 const TripleRowSliderContext = createContext({
   onSelect: () => {}

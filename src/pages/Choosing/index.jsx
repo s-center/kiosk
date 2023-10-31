@@ -17,13 +17,13 @@ export const Choosing = () => {
         justify-content: space-around;
         z-index:-2;
       `}>
-    <video
+      <video
         src={Waterdrop}
         alt='물방울'
         css={css`z-index: 1; width: 100%; heigt: 100%; position: fixed; top: 0%; left:0;`}
         autoPlay
         loop
-    />
+      />
 
       <div
         css = { css`
