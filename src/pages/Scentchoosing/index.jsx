@@ -11,8 +11,12 @@ import peony from '../../assets/peony.png'
 import cedarwood from '../../assets/cedarwood.png'
 import musk from '../../assets/musk.png'
 import vanilla from '../../assets/vanilla.png'
+import { useContext } from 'react'
+import { UserPreference } from '../../App'
 
-export const scentChoosing = () => {
+export const ScentChoosing = () => {
+  const [, setUserPreference] = useContext(UserPreference)
+
   return (
     <div
       css={css`
@@ -21,18 +25,18 @@ export const scentChoosing = () => {
       `}
     >
       <Layout downBanner="" mainCSS={css`height: 45%; flex-direction: column; justify-content: space-between;`}>
-        <TripleRowSlider css={css`height: 100%;`} onSelect={console.log}>
-          <Group>
+        <TripleRowSlider css={css`height: 100%;`} onSelect={(id, kind) => setUserPreference(preference => ({ ...preference, scent: { ...preference.scent, [kind]: id } }))}>
+          <Group name='top'>
             <Row id='pear' image={pear} />
             <Row id='basil' image={basil} />
             <Row id='lavender' image={lavender} />
           </Group>
-          <Group>
+          <Group name='middle'>
             <Row id='freesia' image={freesia} />
             <Row id='jasmin' image={jasmin} />
             <Row id='peony' image={peony} />
           </Group>
-          <Group>
+          <Group name='bottom'>
             <Row id='cedarwood' image={cedarwood} />
             <Row id='musk' image={musk} />
             <Row id='vanilla' image={vanilla} />
