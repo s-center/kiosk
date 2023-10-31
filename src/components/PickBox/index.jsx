@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { css } from '@emotion/react'
 
+import greyDefaultBackground from '../../assets/grey-default-background.png'
+
 export const PickBox = ( props ) => {
   const [imageOpacity, setImageOpacity] = useState(1)
   const [showX, setShowX] = useState(false)
@@ -21,7 +23,7 @@ export const PickBox = ( props ) => {
 
       onClick = {handleDivClick}>
 
-      <img src = {props.img}
+      <img src = {props.img ?? greyDefaultBackground}
         css = {css`
                                     opacity : imageOpacity;
                                     display: showX ? 'none' : 'block';

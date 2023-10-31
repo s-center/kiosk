@@ -203,6 +203,6 @@ function nameToPreviewImage(name) {
   case 'sensual':
     return vanillaPreview
   default:
-    return '' // blank image?
+    return // blank image?
   }
 }
