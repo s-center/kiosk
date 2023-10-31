@@ -1,6 +1,5 @@
 import { Layout } from '../Layout/index'
 import { css } from '@emotion/react'
-import { NextPageButton } from '../../components/Button/nextPageButton'
 import { Group, Row, TripleRowSlider } from '../../components/TripleRowSlider'
 
 import pear from '../../assets/pear.png'
@@ -39,7 +38,6 @@ export const scentChoosing = () => {
             <Row id='vanilla' image={vanilla} />
           </Group>
         </TripleRowSlider>
-        <NextPageButton to='/myscent'/>
       </Layout>
     </div>
   )

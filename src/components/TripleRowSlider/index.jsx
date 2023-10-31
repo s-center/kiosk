@@ -1,5 +1,6 @@
-import { Children, createContext, useContext, useEffect, useState } from 'react'
+import { Children, createContext, useContext, useState } from 'react'
 import { css } from '@emotion/react'
+import { NextPageButton } from '../Button/nextPageButton.jsx';
 
 const TripleRowSliderContext = createContext({
   onSelect: () => {}
@@ -17,12 +18,6 @@ const SlideIndexIndicator = ({ index, length }) => (
 export const TripleRowSlider = ({ onSelect, className, children: groups }) => {
   const [currentGroupIndex, setCurrentGroupIndex] = useState(0)
 
-  useEffect(() => {
-    window.nextGroup = () => setCurrentGroupIndex(i => i + 1 < Children.count(groups) ? i + 1 : 0)
-
-    return () => delete window.nextGroup
-  }, [])
-
   return (
     <div className={className}>
       <SlideIndexIndicator
@@ -36,6 +31,8 @@ export const TripleRowSlider = ({ onSelect, className, children: groups }) => {
       <TripleRowSliderContext.Provider value={{ onSelect }}>
         {groups[currentGroupIndex]}
       </TripleRowSliderContext.Provider>
+      <NextPageButton onClick={() => setCurrentGroupIndex(i => i + 1 < Children.count(groups) ? i + 1 : 0)} />
+      <NextPageButton reversed onClick={() => setCurrentGroupIndex(i => i - 1 >= 0 ? i - 1 : Children.count(groups) - 1)} />
     </div>
   )
 }

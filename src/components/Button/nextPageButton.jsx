@@ -1,20 +1,23 @@
 import { css } from '@emotion/react'
 import buttonImg from '../../assets/a.png'
-import { Link } from 'wouter'
-export const NextPageButton = ({ to }) =>{
+export const NextPageButton = ({ reversed, onClick }) =>{
   const buttonStyle = css`
     width: 3%;
     height: auto;
     position: absolute;
-    left: 92%;
+    left: 95%;
     top: 54.5%;
     `
 
   return(
-    <div>
-      <Link to = { to }>
-        <img css={ buttonStyle } src={ buttonImg } alt='버튼'/>
-      </Link>
-    </div>
+    <img
+      onClick={onClick}
+      css={[
+        buttonStyle,
+        css`transform: rotate(${reversed ? 180 : 0}deg); ${reversed ? 'right: 95%; left: auto; ' : ''}`
+      ]}
+      src={ buttonImg }
+      alt='버튼'
+    />
   )
 }
