@@ -55,14 +55,14 @@ export const Slide = ({ id, onSelect, onDiscard, isFocused, className, children 
   return (
     <div
       ref={slideElement}
-      onMouseDown={e => isFocused && setDragStartPoint(e.clientY)}
-      onTouchStart={e => isFocused && setDragStartPoint(e.touches[0].clientY)}
-      onMouseMove={e => dragStartPoint && setDraggedLength(e.clientY - dragStartPoint) }
-      onTouchMove={e => dragStartPoint && setDraggedLength(e.touches[0].clientY - dragStartPoint)}
+      onMouseDown={e => isFocused && setDragStartPoint(e.clientX)}
+      onTouchStart={e => isFocused && setDragStartPoint(e.touches[0].clientX)}
+      onMouseMove={e => dragStartPoint && setDraggedLength(e.clientX - dragStartPoint) }
+      onTouchMove={e => dragStartPoint && setDraggedLength(e.touches[0].clientX - dragStartPoint)}
       onMouseUp={e => {
         if (!dragStartPoint) return
 
-        const draggedLength = e.clientY - dragStartPoint
+        const draggedLength = e.clientX - dragStartPoint
 
         if (isFocused && draggedLength < 30 && draggedLength > -30) {
           slideElement.current?.animate(bounce, { duration: 1000 })
@@ -79,7 +79,7 @@ export const Slide = ({ id, onSelect, onDiscard, isFocused, className, children 
         if (!dragStartPoint) return
         if (e.changedTouches.length < 1) return
 
-        const draggedLength = e.changedTouches[0].clientY - dragStartPoint
+        const draggedLength = e.changedTouches[0].clientX - dragStartPoint
 
         if (isFocused && draggedLength < 30 && draggedLength > -30) {
           slideElement.current?.animate(bounce, { duration: 1000 })
@@ -101,7 +101,7 @@ export const Slide = ({ id, onSelect, onDiscard, isFocused, className, children 
         box-shadow: 0 0 50px rgb(0 0 0 / 50%);
       
         &:nth-child(1) {
-          transform: translate3d(-50%, -50%, 0px) translateY(${draggedLength}px);
+          transform: translate3d(-50%, -50%, 0px) translateX(${draggedLength}px);
           z-index: 4;
         }
         
