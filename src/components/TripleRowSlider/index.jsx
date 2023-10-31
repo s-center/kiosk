@@ -1,6 +1,7 @@
 import { Children, createContext, useContext, useState } from 'react'
 import { css } from '@emotion/react'
-import { NextPageButton } from '../Button/nextPageButton.jsx'
+import { NextPageButton } from '../Button/nextPageButton'
+import { ScentSelectionStatus } from '../../App'
 
 const TripleRowSliderContext = createContext({
   onSelect: () => {}
@@ -16,7 +17,7 @@ const SlideIndexIndicator = ({ index, length }) => (
 )
 
 export const TripleRowSlider = ({ onSelect, className, children: groups }) => {
-  const [currentGroupIndex, setCurrentGroupIndex] = useState(0)
+  const { pos: currentGroupIndex, setPos: setCurrentGroupIndex } = useContext(ScentSelectionStatus)
 
   return (
     <div className={className}>
@@ -31,20 +32,38 @@ export const TripleRowSlider = ({ onSelect, className, children: groups }) => {
       <TripleRowSliderContext.Provider value={{ onSelect }}>
         {groups[currentGroupIndex]}
       </TripleRowSliderContext.Provider>
-      <NextPageButton onClick={() => setCurrentGroupIndex(i => i + 1 < Children.count(groups) ? i + 1 : 0)} />
-      <NextPageButton reversed onClick={() => setCurrentGroupIndex(i => i - 1 >= 0 ? i - 1 : Children.count(groups) - 1)} />
+      <NextPageButton
+        onClick={() => {
+          const nextIndex = currentGroupIndex + 1 < Children.count(groups) ? currentGroupIndex + 1 : 0
+
+          setCurrentGroupIndex(nextIndex)
+        }}
+      />
+      <NextPageButton
+        reversed
+        onClick={() => {
+          const nextIndex = currentGroupIndex - 1 >= 0 ? currentGroupIndex - 1 : Children.count(groups) - 1
+
+          setCurrentGroupIndex(nextIndex)
+        }}
+      />
     </div>
   )
 }
 
-export const Group = ({ className, children: rows }) => (
-  <div css={css`display: flex; flex-direction: column; margin-top: 10%;`} className={className}>
-    {rows}
-  </div>
+const Grouped = createContext(null)
+
+export const Group = ({ name, className, children: rows }) => (
+  <Grouped.Provider value={name}>
+    <div css={css`display: flex; flex-direction: column; margin-top: 10%;`} className={className}>
+      {rows}
+    </div>
+  </Grouped.Provider>
 )
 
 export const Row = ({ id, image, className }) => {
   const { onSelect } = useContext(TripleRowSliderContext)
+  const name = useContext(Grouped)
 
-  return <img css={css`width: 100%; height: 32%; margin-bottom: -5%;`} src={image} onClick={() => onSelect(id)} className={className} />
+  return <img css={css`width: 100%; height: 32%; margin-bottom: -5%;`} src={image} onClick={() => onSelect(id, name)} className={className} />
 }
