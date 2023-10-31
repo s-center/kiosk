@@ -97,8 +97,6 @@ export const Slide = ({ id, onSelect, onDiscard, isFocused, className, children 
         position: absolute;
         top: 50%;
         left: 50%;
-        
-        box-shadow: 0 0 50px rgb(0 0 0 / 50%);
       
         &:nth-child(1) {
           transform: translate3d(-50%, -50%, 0px) translateX(${draggedLength}px);
