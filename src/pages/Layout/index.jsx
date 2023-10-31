@@ -25,7 +25,7 @@ import vanillaPreview from '../../assets/vanilla-preview.png'
 //props로 각 페이지 별 베너의 폰트 컬러, downer 배너 표시 여부 결정 가능
 export const Layout= ( props ) =>{
 
-  const [ buttonColor, setButtonColor ] = useState( '#808080' )
+  const [ buttonColor, setButtonColor ] = useState( 'rgba(255, 255, 255, 0.6)' )
   const [userPreference, setUserPreference] = useContext(UserPreference) // TODO: Selection cancellation
   const [location] = useLocation()
   const { pos , setPos } = useContext(ScentSelectionStatus)
