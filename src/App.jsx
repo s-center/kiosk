@@ -19,7 +19,7 @@ export const UserPreference = createContext([{
 export const App = () => {
   const [userPreference, setUserPreference] = useState({
     place: null,
-    keyword: 'freesia',
+    keyword: null,
     scent: {
       top: null,
       middle: null,
