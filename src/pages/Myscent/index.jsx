@@ -7,14 +7,14 @@ import Peony from '../../assets/backgroundImg/peony.png'
 import Bottle from '../../assets/bottle/Bottle.png'
 
 export const Myscent = ( props ) => {
-    
+
   let BackgroundImg =''
   if (props.base === 'freesia'){
     BackgroundImg = Freesia
   }
   else if (props.base === 'jasmin'){
     BackgroundImg = Jasmin
-  } 
+  }
   else{
     BackgroundImg = Peony
   }
@@ -22,6 +22,8 @@ export const Myscent = ( props ) => {
   return(
 
     <div css = {css`
+                height: 100%;
+                width: 100%;
                 display: flex;
                 flex-direction : column;
                 justify-contents: center;
@@ -29,11 +31,13 @@ export const Myscent = ( props ) => {
 
       <img  css = {css`
                     height: 100%; 
-                    width: auto;`}
-      src = { BackgroundImg } 
+                    width: auto;
+                    object-fit: contain
+                    `}
+      src = { BackgroundImg }
       alt = "배경이미지"></img>
 
-      <Logo className = "myscentLogo" 
+      <Logo className = "myscentLogo"
         css = {css`
                     position: absolute; 
                     top: 10%; 
@@ -43,12 +47,12 @@ export const Myscent = ( props ) => {
                     position: absolute;
                     top: 35%;`}
       src = { Bottle } alt = "bottle"></img>
-                
+
       <section css = {css`
                 position: absolute;
-                top: 87%;`}>
-        <Button to ='' 
-          buttonText = "커스텀 디퓨저 저장하기" 
+                top: 81%;`}>
+        <Button to =''
+          buttonText = "커스텀 디퓨저 저장하기"
           className = {css`
                         background-color: white; 
                         margin: 0 0 5% 3%;
@@ -57,7 +61,7 @@ export const Myscent = ( props ) => {
                         color: black;
                         `}/>
 
-        <Button to ='' 
+        <Button to =''
           buttonText = "시제품 추천받기"
           className = {css`
                         background-color: white; 
