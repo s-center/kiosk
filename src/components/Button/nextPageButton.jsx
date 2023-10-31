@@ -6,7 +6,9 @@ export const NextPageButton = ({ to }) =>{
     width: 3%;
     height: auto;
     position: absolute;
-    left: 92%;`
+    left: 92%;
+    top: 54.5%;
+    `
 
   return(
     <div>
