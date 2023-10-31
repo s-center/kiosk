@@ -1,9 +1,9 @@
 import { useContext, useState } from 'react'
 import { Logo } from '../../components/Logo'
 import { css } from '@emotion/react'
-import { Link } from 'wouter'
+import { Link, useLocation } from 'wouter'
 import { PickBox } from '../../components/PickBox'
-import { UserPreference } from '../../App'
+import { ScentSelectionStatus, UserPreference } from '../../App'
 
 import bathRoomPreview from '../../assets/bath-room-preview.png'
 import bedRoomPreview from '../../assets/bed-room-preview.png'
@@ -26,7 +26,9 @@ import vanillaPreview from '../../assets/vanilla-preview.png'
 export const Layout= ( props ) =>{
 
   const [ buttonColor, setButtonColor ] = useState( '#808080' )
-  const [userPreference, setUserPreference] = useContext(UserPreference)
+  const [userPreference, setUserPreference] = useContext(UserPreference) // TODO: Selection cancellation
+  const [location] = useLocation()
+  const { pos } = useContext(ScentSelectionStatus)
   const changeButtonColor = () => {
     setButtonColor( '#ffffff' )
   }
@@ -93,27 +95,26 @@ export const Layout= ( props ) =>{
                 `}>
 
         <Link to ='/placechoosing'>
-          <button css={buttonStyle} onClick ={changeButtonColor}>PLACE</button>
+          <button css={[buttonStyle, css`${location === '/placechoosing' ? 'color: white;' : ''}`]} onClick ={changeButtonColor}>PLACE</button>
         </Link>
         <Link to ='/keywordchoosing'>
-          <button css={buttonStyle} onClick = {changeButtonColor}>KEYWORD</button>
+          <button css={[buttonStyle, css`${location === '/keywordchoosing' ? 'color: white;' : ''}`]} onClick = {changeButtonColor}>KEYWORD</button>
         </Link>
         <Link to ='/scentchoosing'>
-          <button css={buttonStyle} onClick = {changeButtonColor}>SCENT</button>
+          <button css={[buttonStyle, css`${location === '/scentchoosing' ? 'color: white;' : ''}`]} onClick = {changeButtonColor}>SCENT</button>
 
         </Link>
       </div>
 
       <div className="downBanner" css = {downBanner} style={props.noDownBanner ? { display: 'none' } : {}}>
         <Link to ='/scentTop'>
-          <button css={buttonStyle}>TOP</button>
+          <button css={[buttonStyle, css`${pos === 0 ? 'color: white;' : ''}`]}>TOP</button>
         </Link>
         <Link to ='/scentMiddle'>
-          <button css={buttonStyle}>MIDDLE</button>
+          <button css={[buttonStyle, css`${pos === 1 ? 'color: white;' : ''}`]}>MIDDLE</button>
         </Link>
         <Link to ='/scentBase'>
-
-          <button css={buttonStyle}>BASE</button>
+          <button css={[buttonStyle, css`${pos === 2 ? 'color: white;' : ''}`]}>BASE</button>
         </Link>
       </div>
 

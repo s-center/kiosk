@@ -16,6 +16,8 @@ export const UserPreference = createContext([{
   }
 }, () => {}])
 
+export const ScentSelectionStatus = createContext({ pos: null, setPos: () => {}})
+
 export const App = () => {
   const [userPreference, setUserPreference] = useState({
     place: null,
@@ -26,17 +28,20 @@ export const App = () => {
       bottom: null
     }
   })
+  const [pos, setPos] = useState(0)
 
   return (
     <UserPreference.Provider value={[userPreference, setUserPreference]}>
-      <Switch>
-        <Route exact path='/starting' component={ Starting } />
-        <Route path='/choosing' component={ Choosing } />
-        <Route path='/placechoosing' component={ PlaceChoosing } />
-        <Route path ='/scentchoosing' component={ ScentChoosing }/>
-        <Route path="/myscent"> <Myscent base={userPreference.scent.bottom}/> </Route> {/* 예시 props. 나중에는 자동으로 받아서 될 것 */}
-        <Route><Redirect to='/starting' /> {/** Or should we redirect to 404 page? */}</Route>
-      </Switch>
+      <ScentSelectionStatus.Provider value={{ pos, setPos }}>
+        <Switch>
+          <Route exact path='/starting' component={ Starting } />
+          <Route path='/choosing' component={ Choosing } />
+          <Route path='/placechoosing' component={ PlaceChoosing } />
+          <Route path ='/scentchoosing' component={ ScentChoosing }/>
+          <Route path="/myscent"> <Myscent base={userPreference.scent.bottom}/> </Route> {/* 예시 props. 나중에는 자동으로 받아서 될 것 */}
+          <Route><Redirect to='/starting' /> {/** Or should we redirect to 404 page? */}</Route>
+        </Switch>
+      </ScentSelectionStatus.Provider>
     </UserPreference.Provider>
   )
 }
