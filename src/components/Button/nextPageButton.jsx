@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { css } from '@emotion/react'
 import buttonImg from '../../assets/a.png'
 import { Link } from 'wouter'

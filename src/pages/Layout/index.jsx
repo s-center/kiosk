@@ -4,11 +4,11 @@ import { css } from '@emotion/react'
 import { Link } from 'wouter'
 import { PickBox } from '../../components/PickBox'
 //props로 각 페이지 별 베너의 폰트 컬러, downer 배너 표시 여부 결정 가능
-export const Layout= ( props ) =>{
+export const Layout = (props) => {
 
-  const [ buttonColor, setButtonColor ] = useState( '#808080' )
+  const [buttonColor, setButtonColor] = useState('#808080')
   const changeButtonColor = () => {
-    setButtonColor( '#ffffff' )
+    setButtonColor('#ffffff')
   }
 
   const buttonStyle = css`
@@ -50,17 +50,18 @@ export const Layout= ( props ) =>{
         z-index: -1;
       `} className={props.className}>
 
-      <Logo className= "scentchoosingLogo"
-        css = {css`
+      <Logo className="scentchoosingLogo"
+        css={css`
                     width: 40%;
                     height: auto;
 
                     position: absolute;
                     top: 5%;
-                    `}/>
+                    z-index: 10;
+                    `} />
 
-      <div className= "upperBanner"
-        css = {css`
+      <div className="upperBanner"
+        css={css`
                     display: flex;
                     flex-direction: row;
                     justify-content: space-around;
@@ -70,34 +71,35 @@ export const Layout= ( props ) =>{
                     width: 100%;
                     position: absolute;
                     top: 15%;
+                    z-index: 10;
                 `}>
 
-        <Link to ='/placechoosing'>
-          <button css={buttonStyle} onClick ={changeButtonColor}>PLACE</button>
+        <Link to='/placechoosing'>
+          <button css={buttonStyle} onClick={changeButtonColor}>PLACE</button>
         </Link>
-        <Link to ='/keywordchoosing'>
-          <button css={buttonStyle} onClick = {changeButtonColor}>KEYWORD</button>
+        <Link to='/keywordchoosing_lovely'>
+          <button css={buttonStyle} onClick={changeButtonColor}>KEYWORD</button>
         </Link>
-        <Link to ='/scentchoosing'>
-          <button css={buttonStyle} onClick = {changeButtonColor}>SCENT</button>
+        <Link to='/scentchoosing'>
+          <button css={buttonStyle} onClick={changeButtonColor}>SCENT</button>
 
         </Link>
       </div>
 
-      <div className="downBanner" css = {downBanner} style={props.noDownBanner ? { display: 'none' } : {}}>
-        <Link to ='/scentTop'>
+      <div className="downBanner" css={downBanner} style={props.noDownBanner ? { display: 'none' } : {}}>
+        <Link to='/scentTop'>
           <button css={buttonStyle}>TOP</button>
         </Link>
-        <Link to ='/scentMiddle'>
+        <Link to='/scentMiddle'>
           <button css={buttonStyle}>MIDDLE</button>
         </Link>
-        <Link to ='/scentBase'>
+        <Link to='/scentBase'>
 
           <button css={buttonStyle}>BASE</button>
         </Link>
       </div>
 
-      <main css = {css`
+      <main css={css`
                             height: 55%;
                             width: 100%;
                             display: flex;
@@ -106,15 +108,15 @@ export const Layout= ( props ) =>{
         {props.children}
       </main>
 
-      <hr css = {css`
+      <hr css={css`
                 align: center;
                 color: rgba(255,255,255,0.7);
                 width: 87%;
                 position: absolute;
                 top: 80%;
-            `}/>
+            `} />
 
-      <div css = {css`
+      <div css={css`
                             position: absolute;
                             top: 83%;
 
@@ -126,20 +128,20 @@ export const Layout= ( props ) =>{
                             padding: 0 30px 0 30px;
                             `}>
 
-        <PickBox className="place" img =""/>
-        <PickBox className="keyword" img =""/>
-        <PickBox className="top" img =""/>
-        <PickBox className="middle" img =""/>
-        <PickBox className="base" img =""/>
+        <PickBox className="place" img="" />
+        <PickBox className="keyword" img="" />
+        <PickBox className="top" img="" />
+        <PickBox className="middle" img="" />
+        <PickBox className="base" img="" />
 
       </div>
-      <hr css = {css`
+      <hr css={css`
                 align: center;
                 color: rgba(255,255,255,0.7);
                 width: 87%;
                 position: absolute;
                 top: 93%;
-            `}/>
+            `} />
 
     </div>
   )
