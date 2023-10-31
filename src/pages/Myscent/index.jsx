@@ -1,4 +1,3 @@
-import React from 'react'
 import { Logo } from '../../components/Logo/index'
 import { css } from '@emotion/react'
 import { Button } from '../../components/Button/index'
