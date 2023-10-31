@@ -22,7 +22,6 @@ export const PickBox = ( props ) => {
       onClick = {handleDivClick}>
 
       <img src = {props.img}
-        alt ={props.className}
         css = {css`
                                     opacity : imageOpacity;
                                     display: showX ? 'none' : 'block';
