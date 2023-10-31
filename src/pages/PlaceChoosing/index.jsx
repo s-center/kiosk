@@ -8,6 +8,9 @@ import kidsRoom from '../../assets/kids-room.png'
 import livingRoom from '../../assets/living-room.png'
 import office from '../../assets/office.png'
 import shoeCloset from '../../assets/shoe-closet.png'
+import { useContext } from 'react'
+import { UserPreference } from '../../App'
+import { useMyScentNavigator } from '../../useMyScentNavigator'
 
 const Card = ({ id, image, ...props }) => (
   <Slide id={id} css={css`width: 38.9%; height: 70%; top: 60%; box-shadow: 0 0 50px rgb(255 255 255 / 50%);`} {...props}>
@@ -16,10 +19,14 @@ const Card = ({ id, image, ...props }) => (
 )
 
 export const PlaceChoosing = () => {
+  const [, setUserPreference] = useContext(UserPreference)
+  const myScentNavigator = useMyScentNavigator()
+
   return (
-    <Layout downBanner='' noDownBanner css={css`width: 100%; height: 100%;`}>
-      <Slider
-        css={css`
+    <>
+      <Layout downBanner='' noDownBanner css={css`width: 100%; height: 100%;`}>
+        <Slider
+          css={css`
           width: 100%; 
           height: 100%;
           
@@ -28,15 +35,17 @@ export const PlaceChoosing = () => {
           justify-content: flex-start;
           align-content: center;
         `}
-        onSelect={console.log}
-      >
-        <Card id='bath-room' image={bathRoom} />
-        <Card id='bed-room' image={bedRoom} />
-        <Card id='kids-room' image={kidsRoom} />
-        <Card id='living-room' image={livingRoom} />
-        <Card id='office' image={office} />
-        <Card id='shoe-closet' image={shoeCloset} />
-      </Slider>
-    </Layout>
+          onSelect={place => setUserPreference(preference => ({ ...preference, place }))}
+        >
+          <Card id='bath-room' image={bathRoom} />
+          <Card id='bed-room' image={bedRoom} />
+          <Card id='kids-room' image={kidsRoom} />
+          <Card id='living-room' image={livingRoom} />
+          <Card id='office' image={office} />
+          <Card id='shoe-closet' image={shoeCloset} />
+        </Slider>
+      </Layout>
+      {myScentNavigator}
+    </>
   )
 }

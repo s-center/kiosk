@@ -26,6 +26,8 @@ export const PickBox = ( props ) => {
         css = {css`
                                     opacity : imageOpacity;
                                     display: showX ? 'none' : 'block';
+                                    width: 100%;
+                                    height: 100%;
                                     `}/>
       {showX && ( <div
         css = {css`
