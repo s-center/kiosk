@@ -5,6 +5,12 @@ import { css } from '@emotion/react'
 import { NextPageButton } from '../../components/Button/nextPageButton'
 import { UserPreference } from '../../App.jsx'
 
+import lovelyLabel from '../../assets/lovely-label.png'
+import positiveLabel from '../../assets/positive-label.png'
+import coldLabel from '../../assets/cold-label.png'
+import calmLabel from '../../assets/calm-label.png'
+import passionateLabel from '../../assets/passionate-label.png'
+import sensualLabel from '../../assets/sensual-label.png'
 
 export const KeywordChoosing = () => {
   const [, setUserPreference] = useContext(UserPreference)
@@ -18,45 +24,7 @@ export const KeywordChoosing = () => {
       fir='243' fig='155' fib='167'
       maxRadius={300} minRadius={200} gradient={0.01} totalParticles={100} vx={2} vy={2}
       key='lovely' onClick={() => setUserPreference(preference => ({ ...preference, keyword: currentComponentClassName.props.className }))}
-    />,
-    <Keyword className='positive'
-      fr='253' fg='234' fb='60'
-      sr='253' sg='180' sb='1'
-      tr='255' tg='233' tb='135'
-      for='233' fog='253' fob='165'
-      fir='181' fig='228' fib='45'
-      maxRadius={400} minRadius={80} gradient={0.5} totalParticles={120}vx={4} vy={5}
-      key='positive' onClick={() => setUserPreference(preference => ({ ...preference, keyword: currentComponentClassName.props.className }))}
-    />,
-    <Keyword className="cold"
-      fr='4' fg='161' fb='243'
-      sr='141' sg='236' sb='246'
-      tr='6' tg='123' tb='229'
-      for='0' fog='1' fob='146'
-      fir='6' fig='123' fib='229'
-      maxRadius={300} minRadius={200} gradient={0.8} totalParticles={100}
-      vx={2} vy={1}
-      key='cold' onClick={() => setUserPreference(preference => ({ ...preference, keyword: currentComponentClassName.props.className }))}
-    />,
-    <Keyword className='calm'
-      fr='53' fg='104' fb='118'
-      sr='1' sg='8' sb='6'
-      tr='126' tg='174' tb='192'
-      for='162' fog='66' fob='81'
-      fir='211' fig='110' fib='127'
-      maxRadius={400} minRadius={100} gradient={0.7} totalParticles={300}
-      vx={1} vy={2}
-      key='calm' onClick={() => setUserPreference(preference => ({ ...preference, keyword: currentComponentClassName.props.className }))}
-    />,
-    <Keyword className='passionate'
-      fr='209' fg='36' fb='2'
-      sr='255' sg='40' sb='0'
-      tr='255' tg='145' tb='55'
-      for='237' fog='165' fob='143'
-      fir='167' fig='1' fib='3'
-      maxRadius={200} minRadius={90} gradient={0.7} totalParticles={4000}
-      vx={1} vy={7}
-      key='passionate' onClick={() => setUserPreference(preference => ({ ...preference, keyword: currentComponentClassName.props.className }))}
+      label={lovelyLabel} isLeft
     />,
     <Keyword className='sensual'
       fr='82' fg='36' fb='145'
@@ -67,6 +35,50 @@ export const KeywordChoosing = () => {
       maxRadius={250} minRadius={200} gradient={0.7} totalParticles={100}
       vx={3} vy={1}
       key='sensual' onClick={() => setUserPreference(preference => ({ ...preference, keyword: currentComponentClassName.props.className }))}
+      label={sensualLabel}
+    />,
+    <Keyword className='positive'
+      fr='253' fg='234' fb='60'
+      sr='253' sg='180' sb='1'
+      tr='255' tg='233' tb='135'
+      for='233' fog='253' fob='165'
+      fir='181' fig='228' fib='45'
+      maxRadius={400} minRadius={80} gradient={0.5} totalParticles={120}vx={4} vy={5}
+      key='positive' onClick={() => setUserPreference(preference => ({ ...preference, keyword: currentComponentClassName.props.className }))}
+      label={positiveLabel} isLeft
+    />,
+    <Keyword className="cold"
+      fr='4' fg='161' fb='243'
+      sr='141' sg='236' sb='246'
+      tr='6' tg='123' tb='229'
+      for='0' fog='1' fob='146'
+      fir='6' fig='123' fib='229'
+      maxRadius={300} minRadius={200} gradient={0.8} totalParticles={100}
+      vx={2} vy={1}
+      key='cold' onClick={() => setUserPreference(preference => ({ ...preference, keyword: currentComponentClassName.props.className }))}
+      label={coldLabel}
+    />,
+    <Keyword className='calm'
+      fr='53' fg='104' fb='118'
+      sr='1' sg='8' sb='6'
+      tr='126' tg='174' tb='192'
+      for='162' fog='66' fob='81'
+      fir='211' fig='110' fib='127'
+      maxRadius={400} minRadius={100} gradient={0.7} totalParticles={300}
+      vx={1} vy={2}
+      key='calm' onClick={() => setUserPreference(preference => ({ ...preference, keyword: currentComponentClassName.props.className }))}
+      label={calmLabel} isLeft
+    />,
+    <Keyword className='passionate'
+      fr='209' fg='36' fb='2'
+      sr='255' sg='40' sb='0'
+      tr='255' tg='145' tb='55'
+      for='237' fog='165' fob='143'
+      fir='167' fig='1' fib='3'
+      maxRadius={200} minRadius={90} gradient={0.7} totalParticles={4000}
+      vx={1} vy={7}
+      key='passionate' onClick={() => setUserPreference(preference => ({ ...preference, keyword: currentComponentClassName.props.className }))}
+      label={passionateLabel}
     />
   ]
 
@@ -90,13 +102,13 @@ export const KeywordChoosing = () => {
   return (
     <Layout downBanner='none'>
       <div css={css` width: 100%; height: 100%; position: fixed; top:0;`}>
+        {currentComponentClassName}
         <NextPageButton onClick={() => {
           changeComponent(1)
         }} />
         <NextPageButton reversed onClick={() => {
           changeComponent(-1)
-        }}/>
-        {currentComponentClassName}
+        }} />
       </div>
     </Layout>
 

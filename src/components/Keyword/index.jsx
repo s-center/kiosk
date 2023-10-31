@@ -46,7 +46,6 @@ export const Keyword = (props) => {
   }
 
   useEffect(() => {
-    console.log(`generate particles for ${props.className}`)
     createParticles()
   }, [stagWidth, stageHeight, maxRadius, minRadius, props.gradient, props.vx, props.vy, createParticles, props.className])
 
@@ -69,5 +68,10 @@ export const Keyword = (props) => {
     animate()
   }, [stagWidth, stageHeight, particles, animate])
 
-  return <canvas ref={canvasRef} onClick={props.onClick} className="glow-particle-canvas" css={css`width: 100%; height: 100%;`} />
+  return (
+    <>
+      <canvas ref={canvasRef} onClick={props.onClick} className="glow-particle-canvas" css={css`width: 100%; height: 100%;`} />
+      <img src={props.label} css={css`position: absolute; ${props.isLeft ? 'left: 5%; top: 7%; ' : 'right: 6%; bottom: 22%;'}`} />
+    </>
+  )
 }

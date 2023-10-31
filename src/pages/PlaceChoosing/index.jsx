@@ -13,7 +13,7 @@ import { UserPreference } from '../../App'
 import { useMyScentNavigator } from '../../useMyScentNavigator'
 
 const Card = ({ id, image, ...props }) => (
-  <Slide id={id} css={css`width: 38.9%; height: 70%; top: 60%; box-shadow: 0 0 50px rgb(255 255 255 / 50%);`} {...props}>
+  <Slide id={id} css={css`width: 71%; height: 60%; top: 60%; box-shadow: 0 0 50px rgb(255 255 255 / 50%);`} {...props}>
     <img src={image} css={css`width: 100%; height: 100%; object-fit: contain; pointer-events: none;`} onDragStart={() => false} />
   </Slide>
 )
