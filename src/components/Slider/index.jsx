@@ -22,10 +22,10 @@ export const Slider = ({ onSelect, className, children: slides }) => {
           (child, index) =>
             cloneElement(child, {
               onSelect,
-              onDiscard: () => {
-                const candidate = slides.filter(({ props: { id }}) => visibleEntry.every(({ props: { id: idOfAlreadyVisibleSlide }}) => id !== idOfAlreadyVisibleSlide))[0]
-
-                setVisibleEntry(visibleEntry.slice(1).concat([candidate ?? visibleEntry[0]]))
+              onDiscard: discardedSlideId => {
+                const discardedSlideIndex = slides.findIndex(({ props: { id }}) => id === discardedSlideId)
+                const nextSlideIndex = (discardedSlideIndex + 4) % slides.length
+                setVisibleEntry(visibleEntry.slice(1).concat([slides[nextSlideIndex]]))
               },
               isFocused: index === 0
             })
@@ -77,8 +77,9 @@ export const Slide = ({ id, onSelect, onDiscard, isFocused, className, children 
       }}
       onTouchEnd={e => {
         if (!dragStartPoint) return
+        if (e.changedTouches.length < 1) return
 
-        const draggedLength = e.touches[0].clientY - dragStartPoint
+        const draggedLength = e.changedTouches[0].clientY - dragStartPoint
 
         if (isFocused && draggedLength < 30 && draggedLength > -30) {
           slideElement.current?.animate(bounce, { duration: 1000 })
