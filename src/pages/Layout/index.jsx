@@ -57,6 +57,7 @@ export const Layout= ( props ) =>{
 
                     position: absolute;
                     top: 5%;
+                    z-index:10;
                     `}/>
 
       <div className= "upperBanner"
@@ -70,6 +71,7 @@ export const Layout= ( props ) =>{
                     width: 100%;
                     position: absolute;
                     top: 15%;
+                    z-index: 10;
                 `}>
 
         <Link to ='/placechoosing'>
