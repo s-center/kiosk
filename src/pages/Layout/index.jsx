@@ -97,12 +97,12 @@ export const Layout= ( props ) =>{
         </Link>
       </div>
 
-      <main css = {css`
+      <main css = {[css`
                             height: 55%;
                             width: 100%;
                             display: flex;
                             align-items: center;
-                            justify-content: space-around;`}>
+                            justify-content: space-around;`, props.mainCSS]}>
         {props.children}
       </main>
 
