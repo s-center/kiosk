@@ -195,6 +195,13 @@ function nameToPreviewImage(name) {
     return muskPreview
   case 'vanilla':
     return vanillaPreview
+  case 'lovely':
+  case 'positive':
+  case 'cold':
+  case 'calm':
+  case 'passionate':
+  case 'sensual':
+    return vanillaPreview
   default:
     return '' // blank image?
   }

@@ -1,11 +1,13 @@
 import { Keyword } from '../../components/Keyword'
 import { Layout } from '../Layout'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { css } from '@emotion/react'
 import { NextPageButton } from '../../components/Button/nextPageButton'
+import { UserPreference } from '../../App.jsx'
 
 
 export const KeywordChoosing = () => {
+  const [, setUserPreference] = useContext(UserPreference)
 
   const components = [
     <Keyword className='lovely'
@@ -15,16 +17,16 @@ export const KeywordChoosing = () => {
       for='205' fog='112' fob='165'
       fir='243' fig='155' fib='167'
       maxRadius={300} minRadius={200} gradient={0.01} totalParticles={100} vx={2} vy={2}
-      key='lovely'
+      key='lovely' onClick={() => setUserPreference(preference => ({ ...preference, keyword: currentComponentClassName.props.className }))}
     />,
     <Keyword className='positive'
-      fr='253' fg='234' fb='60's
+      fr='253' fg='234' fb='60'
       sr='253' sg='180' sb='1'
       tr='255' tg='233' tb='135'
       for='233' fog='253' fob='165'
       fir='181' fig='228' fib='45'
       maxRadius={400} minRadius={80} gradient={0.5} totalParticles={120}vx={4} vy={5}
-      key='positive'
+      key='positive' onClick={() => setUserPreference(preference => ({ ...preference, keyword: currentComponentClassName.props.className }))}
     />,
     <Keyword className="cold"
       fr='4' fg='161' fb='243'
@@ -34,7 +36,7 @@ export const KeywordChoosing = () => {
       fir='6' fig='123' fib='229'
       maxRadius={300} minRadius={200} gradient={0.8} totalParticles={100}
       vx={2} vy={1}
-      key='cold'
+      key='cold' onClick={() => setUserPreference(preference => ({ ...preference, keyword: currentComponentClassName.props.className }))}
     />,
     <Keyword className='calm'
       fr='53' fg='104' fb='118'
@@ -44,7 +46,7 @@ export const KeywordChoosing = () => {
       fir='211' fig='110' fib='127'
       maxRadius={400} minRadius={100} gradient={0.7} totalParticles={300}
       vx={1} vy={2}
-      key='calm'
+      key='calm' onClick={() => setUserPreference(preference => ({ ...preference, keyword: currentComponentClassName.props.className }))}
     />,
     <Keyword className='passionate'
       fr='209' fg='36' fb='2'
@@ -54,7 +56,7 @@ export const KeywordChoosing = () => {
       fir='167' fig='1' fib='3'
       maxRadius={200} minRadius={90} gradient={0.7} totalParticles={4000}
       vx={1} vy={7}
-      key='passionate'
+      key='passionate' onClick={() => setUserPreference(preference => ({ ...preference, keyword: currentComponentClassName.props.className }))}
     />,
     <Keyword className='sensual'
       fr='82' fg='36' fb='145'
@@ -64,7 +66,7 @@ export const KeywordChoosing = () => {
       fir='194' fig='88' fib='222'
       maxRadius={250} minRadius={200} gradient={0.7} totalParticles={100}
       vx={3} vy={1}
-      key='sensual'
+      key='sensual' onClick={() => setUserPreference(preference => ({ ...preference, keyword: currentComponentClassName.props.className }))}
     />
   ]
 
@@ -88,8 +90,12 @@ export const KeywordChoosing = () => {
   return (
     <Layout downBanner='none'>
       <div css={css` width: 100%; height: 100%; position: fixed; top:0;`}>
-        <NextPageButton onClick={() => changeComponent(1)} />
-        <NextPageButton reversed onClick={() => changeComponent(-1)} />
+        <NextPageButton onClick={() => {
+          changeComponent(1)
+        }} />
+        <NextPageButton reversed onClick={() => {
+          changeComponent(-1)
+        }}/>
         {currentComponentClassName}
       </div>
     </Layout>

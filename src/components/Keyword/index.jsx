@@ -4,9 +4,6 @@ import { css } from '@emotion/react'
 
 
 export const Keyword = (props) => {
-  const handleClick = () => {
-    //콜백 동작
-  }
 
   const COLORS = [
     { r: props.fr, g: props.fg, b: props.fb },
@@ -29,14 +26,14 @@ export const Keyword = (props) => {
     particles = []
 
     for (let i = 0; i < totalParticles; i++) {
-            
+
       const item = new glowParticle(
         Math.random() * stagWidth,
         Math.random() * stageHeight,
         Math.random() * (maxRadius - minRadius) + minRadius,
         COLORS[curColor],
         props.gradient,
-        props.vx, 
+        props.vx,
         props.vy
       )
 
@@ -72,5 +69,5 @@ export const Keyword = (props) => {
     animate()
   }, [stagWidth, stageHeight, particles, animate])
 
-  return <canvas ref={canvasRef} onClick={handleClick} className="glow-particle-canvas" css={css`width: 100%; height: 100%;`} />
+  return <canvas ref={canvasRef} onClick={props.onClick} className="glow-particle-canvas" css={css`width: 100%; height: 100%;`} />
 }
