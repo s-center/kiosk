@@ -1,12 +1,34 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { Logo } from '../../components/Logo'
 import { css } from '@emotion/react'
-import { Link } from 'wouter'
+import { Link, useLocation } from 'wouter'
 import { PickBox } from '../../components/PickBox'
+import { ScentSelectionStatus, UserPreference } from '../../App'
+
+import bathRoomPreview from '../../assets/bath-room-preview.png'
+import bedRoomPreview from '../../assets/bed-room-preview.png'
+import kidsRoomPreview from '../../assets/kids-room-preview.png'
+import livingRoomPreview from '../../assets/living-room-preview.png'
+import officePreview from '../../assets/office-preview.png'
+import shoeClosetPreview from '../../assets/shoe-closet-preview.png'
+
+import pearPreview from '../../assets/pear-preview.png'
+import basilPreview from '../../assets/basil-preview.png'
+import lavenderPreview from '../../assets/lavender-preview.png'
+import freesiaPreview from '../../assets/freesia-preview.png'
+import jasminPreview from '../../assets/jasmin-preview.png'
+import peonyPreview from '../../assets/peony-preview.png'
+import cedarwoodPreview from '../../assets/cedarwood-preview.png'
+import muskPreview from '../../assets/musk-preview.png'
+import vanillaPreview from '../../assets/vanilla-preview.png'
+
 //props로 각 페이지 별 베너의 폰트 컬러, downer 배너 표시 여부 결정 가능
 export const Layout= ( props ) =>{
 
   const [ buttonColor, setButtonColor ] = useState( '#808080' )
+  const [userPreference, setUserPreference] = useContext(UserPreference) // TODO: Selection cancellation
+  const [location] = useLocation()
+  const { pos , setPos } = useContext(ScentSelectionStatus)
   const changeButtonColor = () => {
     setButtonColor( '#ffffff' )
   }
@@ -73,28 +95,21 @@ export const Layout= ( props ) =>{
                 `}>
 
         <Link to ='/placechoosing'>
-          <button css={buttonStyle} onClick ={changeButtonColor}>PLACE</button>
+          <button css={[buttonStyle, css`${location === '/placechoosing' ? 'color: white;' : ''}`]} onClick ={changeButtonColor}>PLACE</button>
         </Link>
         <Link to ='/keywordchoosing'>
-          <button css={buttonStyle} onClick = {changeButtonColor}>KEYWORD</button>
+          <button css={[buttonStyle, css`${location === '/keywordchoosing' ? 'color: white;' : ''}`]} onClick = {changeButtonColor}>KEYWORD</button>
         </Link>
         <Link to ='/scentchoosing'>
-          <button css={buttonStyle} onClick = {changeButtonColor}>SCENT</button>
+          <button css={[buttonStyle, css`${location === '/scentchoosing' ? 'color: white;' : ''}`]} onClick = {changeButtonColor}>SCENT</button>
 
         </Link>
       </div>
 
       <div className="downBanner" css = {downBanner} style={props.noDownBanner ? { display: 'none' } : {}}>
-        <Link to ='/scentTop'>
-          <button css={buttonStyle}>TOP</button>
-        </Link>
-        <Link to ='/scentMiddle'>
-          <button css={buttonStyle}>MIDDLE</button>
-        </Link>
-        <Link to ='/scentBase'>
-
-          <button css={buttonStyle}>BASE</button>
-        </Link>
+        <button css={[buttonStyle, css`${pos === 0 ? 'color: white;' : ''}`]} onClick={() => setPos(0)}>TOP</button>
+        <button css={[buttonStyle, css`${pos === 1 ? 'color: white;' : ''}`]} onClick={() => setPos(1)}>MIDDLE</button>
+        <button css={[buttonStyle, css`${pos === 2 ? 'color: white;' : ''}`]} onClick={() => setPos(2)}>BASE</button>
       </div>
 
       <main css = {[css`
@@ -126,11 +141,11 @@ export const Layout= ( props ) =>{
                             padding: 0 30px 0 30px;
                             `}>
 
-        <PickBox className="place" img =""/>
-        <PickBox className="keyword" img =""/>
-        <PickBox className="top" img =""/>
-        <PickBox className="middle" img =""/>
-        <PickBox className="base" img =""/>
+        <PickBox className="place" img={nameToPreviewImage(userPreference.place)}/>
+        <PickBox className="keyword" img ={nameToPreviewImage(userPreference.keyword)}/>
+        <PickBox className="top" img ={nameToPreviewImage(userPreference.scent.top)}/>
+        <PickBox className="middle" img ={nameToPreviewImage(userPreference.scent.middle)}/>
+        <PickBox className="base" img ={nameToPreviewImage(userPreference.scent.bottom)}/>
 
       </div>
       <hr css = {css`
@@ -143,4 +158,42 @@ export const Layout= ( props ) =>{
 
     </div>
   )
+}
+
+
+function nameToPreviewImage(name) {
+  switch (name) {
+  case 'bath-room':
+    return bathRoomPreview
+  case 'bed-room':
+    return bedRoomPreview
+  case 'kids-room':
+    return kidsRoomPreview
+  case 'living-room':
+    return livingRoomPreview
+  case 'office':
+    return officePreview
+  case 'shoe-closet':
+    return shoeClosetPreview
+  case 'pear':
+    return pearPreview
+  case 'basil':
+    return basilPreview
+  case 'lavender':
+    return lavenderPreview
+  case 'freesia':
+    return freesiaPreview
+  case 'jasmin':
+    return jasminPreview
+  case 'peony':
+    return peonyPreview
+  case 'cedarwood':
+    return cedarwoodPreview
+  case 'musk':
+    return muskPreview
+  case 'vanilla':
+    return vanillaPreview
+  default:
+    return '' // blank image?
+  }
 }
