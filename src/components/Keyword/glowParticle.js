@@ -42,7 +42,7 @@ export class glowParticle {
       this.vy *= -1
       this.y -= 10
     }
-        
+
 
     ctx.beginPath()
     const g = ctx.createRadialGradient(
@@ -55,6 +55,8 @@ export class glowParticle {
     )
     g.addColorStop(0, `rgba(${this.rgb.r}, ${this.rgb.g}, ${this.rgb.b},1)`)
     g.addColorStop(1, `rgba(${this.rgb.r}, ${this.rgb.g}, ${this.rgb.b},0)`)
+
+
 
     ctx.beginPath()
     ctx.shadowColor = (0, 0, 0, 1) // 그림자 색상 설정

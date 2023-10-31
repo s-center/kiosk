@@ -14,16 +14,16 @@ export const KeywordChoosing = () => {
       tr='224' tg='25' tb='89'
       for='205' fog='112' fob='165'
       fir='243' fig='155' fib='167'
-      maxRadius={300} minRadius={200} gradient={0.01} totalParticles={100} vx={2} vy={2}
+      maxRadius={300} minRadius={200} gradient={0.1} totalParticles={100} vx={2} vy={2}
       key='lovely'
     />,
     <Keyword className='positive'
-      fr='253' fg='234' fb='60's
+      fr='253' fg='234' fb='60'
       sr='253' sg='180' sb='1'
       tr='255' tg='233' tb='135'
       for='233' fog='253' fob='165'
       fir='181' fig='228' fib='45'
-      maxRadius={400} minRadius={80} gradient={0.5} totalParticles={120}vx={4} vy={5}
+      maxRadius={400} minRadius={80} gradient={0.5} totalParticles={120} vx={3} vy={3}
       key='positive'
     />,
     <Keyword className="cold"
@@ -32,17 +32,17 @@ export const KeywordChoosing = () => {
       tr='6' tg='123' tb='229'
       for='0' fog='1' fob='146'
       fir='6' fig='123' fib='229'
-      maxRadius={300} minRadius={200} gradient={0.8} totalParticles={100}
+      maxRadius={300} minRadius={200} gradient={0.9} totalParticles={50}
       vx={2} vy={1}
       key='cold'
     />,
     <Keyword className='calm'
       fr='53' fg='104' fb='118'
       sr='1' sg='8' sb='6'
-      tr='126' tg='174' tb='192'
-      for='162' fog='66' fob='81'
-      fir='211' fig='110' fib='127'
-      maxRadius={400} minRadius={100} gradient={0.7} totalParticles={300}
+      tr='12' tg='166' tb='180'
+      for='138' fog='78' fob='87'
+      fir='175' fig='124' fib='133'
+      maxRadius={400} minRadius={300} gradient={0.7} totalParticles={50}
       vx={0.5} vy={0.5}
       key='calm'
     />,
@@ -58,7 +58,7 @@ export const KeywordChoosing = () => {
     />,
     <Keyword className='sensual'
       fr='82' fg='36' fb='145'
-      sr='240' sg='76' sb='183'
+      sr='200' sg='106' sb='179'
       tr='131' tg='21' tb='35'
       for='42' fog='6' fob='59'
       fir='194' fig='88' fib='222'

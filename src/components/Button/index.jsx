@@ -14,15 +14,15 @@ export const Button = ({ buttonText, to, className, linkStyle }) => {
     align-items: center;
     flex-shrink: 0;
     border-radius: 15px;
-    margin:20px;
-    font-size: 30px;
+    margin:0 0 5% 0;
+    font-size: 40px;
     border:none;
     font-family : NotoSansKR-Regular;
     `
-    
+
   return (
-    <button css={[ buttonStyles, className ]}>
-      <Link to = { to } css ={ [css`color: white; text-decoration: none; `, linkStyle ]}>{ buttonText }</Link>
+    <button css={[buttonStyles, className]}>
+      <Link to={to} css={[css`color: white; text-decoration: none; `, linkStyle]}>{buttonText}</Link>
     </button>
   )
 }

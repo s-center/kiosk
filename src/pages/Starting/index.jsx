@@ -86,7 +86,7 @@ export const Starting = () => {
           left: 50%;
           transform: translate(-65%, -50%);
           
-          ${isTouched && reaction('translate(-85%, -72%) rotate(115deg)')}
+          ${isTouched && reaction('translate(-85%, -85%) rotate(115deg)')}
         `}
         src={handUp}
         alt='Right arm of human'
@@ -102,7 +102,7 @@ export const Starting = () => {
           left: 50%;
           transform: translate(-17%, -50%);
           
-          ${isTouched && reaction('translate(-13%, -60%) rotate(90deg)')}
+          ${isTouched && reaction('translate(-13%, -55%) rotate(90deg)')}
         `}
         src={handDown}
         alt='Left arm of human'
