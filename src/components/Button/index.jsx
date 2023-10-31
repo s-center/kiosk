@@ -1,11 +1,12 @@
 import { Link } from 'wouter'
 import { css } from '@emotion/react'
+import '../../../src/font.css'
 
-export const Button = ({ buttonText, to, className }) => {
+export const Button = ({ buttonText, to, className, linkStyle }) => {
 
   const buttonStyles = css`
-    background-color: '#000'; 
-    opacity: 0.5;
+    background-color: gray; 
+    opacity: 1;
     display: flex;
     width: 648px;
     height: 132px;
@@ -16,11 +17,12 @@ export const Button = ({ buttonText, to, className }) => {
     margin:20px;
     font-size: 30px;
     border:none;
+    font-family : NotoSansKR-Regular;
     `
 
   return (
     <button css={[ buttonStyles, className ]}>
-      <Link to = { to } css ={ css`color:#FFF; text-decoration: none; `}>{ buttonText }</Link>
+      <Link to = { to } css ={ [css`color: white; text-decoration: none; `, linkStyle ]}>{ buttonText }</Link>
     </button>
   )
 }

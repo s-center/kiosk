@@ -11,7 +11,6 @@ export const Layout= ( props ) =>{
     setButtonColor( '#ffffff' )
   }
 
-
   const buttonStyle = css`
         margin: 0;
         font-size: 400%;
@@ -81,6 +80,7 @@ export const Layout= ( props ) =>{
         </Link>
         <Link to ='/scentchoosing'>
           <button css={buttonStyle} onClick = {changeButtonColor}>SCENT</button>
+
         </Link>
       </div>
 
@@ -92,6 +92,7 @@ export const Layout= ( props ) =>{
           <button css={buttonStyle}>MIDDLE</button>
         </Link>
         <Link to ='/scentBase'>
+
           <button css={buttonStyle}>BASE</button>
         </Link>
       </div>
