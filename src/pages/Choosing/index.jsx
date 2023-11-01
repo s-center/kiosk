@@ -2,7 +2,16 @@ import { css } from '@emotion/react'
 import { Button } from '../../components/Button'
 import { Logo } from '../../components/Logo'
 import Waterdrop from '../../assets/waterdrop.mp4'
+import { useEffect, useRef } from 'react'
+
 export const Choosing = () => {
+  const videoEl = useRef(null)
+
+  useEffect(() => {
+    if (videoEl.current)
+      videoEl.current.playbackRate = 0.7
+  }, [])
+
   return (
     <div
       css={css`
@@ -20,9 +29,10 @@ export const Choosing = () => {
       <video
         src={Waterdrop}
         alt='물방울'
-        css={css`z-index: 1; width: 100%; heigt: 100%; position: fixed; top: 0%; left:0;`}
+        css={css`z-index: 1; width: 100%; height: 100%; position: fixed; top: -16%; left:0; `}
         autoPlay
         loop
+        ref={videoEl}
       />
 
       <div
@@ -30,61 +40,58 @@ export const Choosing = () => {
           width: 1748.227px;
           height: 300px;
           flex-shrink: 0;
-          position: relative;
-          top:20%;
+          display : flex;
+          justify-content: center;
           align-items: center;
+          flex-direction : column;
         `}>
 
         <Logo
           css={css`
-            width: 100%;
-            height: 50%;
-            transform: translateX(-3%);
-            position: absolute;
-            top : -100%;
+            width: 25%;
+            height: auto;
             z-index:9;
+            margin-bottom:10%;
+            margin-top:5%;
           `} />
 
         <p
           css={css`
-
             color: #FFF;
-            text-align: center;
-            font-size: 27px;
+            font-size: 37px;
             font-style: normal;
-            line-height: 53.273% 
-            letter-spacing: -4.255px;
+            line-height: 53.273%;
+            letter-spacing: -3.255px;
             text-transform: uppercase;
             z-index:9;
-            font-family:Baskerville; 
+            font-family:Baskerville;
+            margin-bottom:4%; 
+           
             `}>
           You are </p>
         <p
           css={css`
             color: #FFF;
-            text-align:center;
-            font-size: 70px;
+            font-size: 100px;
             font-style: normal;
             line-height: 45.339px;
-            letter-spacing: -10.638px;
             text-transform: uppercase;
-            position: relative;
-            top:10%;
             z-index:9;
             font-family:Baskerville; 
+            font-weight: 100;
           `}> Michelangelo </p>
       </div>
 
       <div
         css={css`
           position: relative;
-          top:-7%;
+          top:3%;
           color: #FFF;
           text-align: center;
-          font-size: 30.059px;
+          font-size: 37px;
           font-style: normal;
-          font-weight: 500;
-          line-height: 50px;
+          font-weight: 100;
+          line-height: 87px;
           text-transform: uppercase;
           z-index:9;
           font-family: NotoSansKR-Regular;
