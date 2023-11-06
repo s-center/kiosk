@@ -40,7 +40,7 @@ export const App = () => {
           <Route path='/placechoosing' component={ PlaceChoosing } />
           <Route path='/keywordchoosing' component={ KeywordChoosing } />
           <Route path ='/scentchoosing' component={ ScentChoosing }/>
-          <Route path="/myscent"> <Myscent base={userPreference.scent.bottom}/> </Route> {/* 예시 props. 나중에는 자동으로 받아서 될 것 */}
+          <Route path="/myscent"> <Myscent middle={userPreference.scent.bottom}/> </Route>
           <Route><Redirect to='/starting' /> {/** Or should we redirect to 404 page? */}</Route>
         </Switch>
       </ScentSelectionStatus.Provider>

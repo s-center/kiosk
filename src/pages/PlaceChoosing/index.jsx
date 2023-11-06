@@ -16,6 +16,7 @@ const Card = ({ id, image, ...props }) => (
   <Slide id={id} css={css`width: 71%; height: 60%; top: 60%;`} {...props}>
     <img src={image} css={css`width: 100%; height: 100%; object-fit: contain; pointer-events: none;`} onDragStart={() => false} />
   </Slide>
+  
 )
 
 export const PlaceChoosing = () => {
