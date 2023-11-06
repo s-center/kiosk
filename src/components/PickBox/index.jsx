@@ -3,15 +3,13 @@ import { css } from '@emotion/react'
 
 import greyDefaultBackground from '../../assets/grey-default-background.png'
 
-export const PickBox = (props) => {
+export const PickBox = ( props ) => {
   const [imageOpacity, setImageOpacity] = useState(1)
   const [showX, setShowX] = useState(false)
-  const [cancel, setCancel] = useState(0)
 
   const handleDivClick = () => {
     setImageOpacity(imageOpacity === 1 ? 0 : 1)
     setShowX(!showX)
-    console.log(showX, cancel)
   }
   
   const handleInnerDivClick = (e) => {
