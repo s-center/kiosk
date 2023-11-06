@@ -11,6 +11,13 @@ import kidsRoomPreview from '../../assets/kids-room-preview.png'
 import livingRoomPreview from '../../assets/living-room-preview.png'
 import officePreview from '../../assets/office-preview.png'
 import shoeClosetPreview from '../../assets/shoe-closet-preview.png'
+import calmPreview from '../../assets/pickbox/calm.png'
+import coldPreview from '../../assets/pickbox/cold.png'
+import lovelyPreview from '../../assets/pickbox/lovely.png'
+import passionatePreview from '../../assets/pickbox/passionate.png'
+import positivePreview from '../../assets/pickbox/positive.png'
+import sensualPreview from '../../assets/pickbox/sensual.png'
+
 
 import pearPreview from '../../assets/pear-preview.png'
 import basilPreview from '../../assets/basil-preview.png'
@@ -195,13 +202,18 @@ function nameToPreviewImage(name) {
     return muskPreview
   case 'vanilla':
     return vanillaPreview
-  case 'lovely':
+  case 'lovely': 
+    return lovelyPreview
   case 'positive':
+    return positivePreview
   case 'cold':
+    return coldPreview
   case 'calm':
+    return calmPreview
   case 'passionate':
+    return passionatePreview
   case 'sensual':
-    return vanillaPreview
+    return sensualPreview
   default:
     return // blank image?
   }
