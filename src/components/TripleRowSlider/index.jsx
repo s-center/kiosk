@@ -1,4 +1,4 @@
-import { Children, createContext, useContext, useState } from 'react'
+import { Children, createContext, useContext } from 'react'
 import { css } from '@emotion/react'
 import { NextPageButton } from '../Button/nextPageButton'
 import { ScentSelectionStatus } from '../../App'

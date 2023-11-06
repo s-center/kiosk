@@ -26,7 +26,7 @@ export const KeywordChoosing = () => {
       key='lovely' onClick={() => setUserPreference(preference => ({ ...preference, keyword: currentComponentClassName.props.className }))}
       label={lovelyLabel} isLeft
     />,
-   <Keyword className='sensual'
+    <Keyword className='sensual'
       fr='82' fg='36' fb='145'
       sr='200' sg='106' sb='179'
       tr='131' tg='21' tb='35'
