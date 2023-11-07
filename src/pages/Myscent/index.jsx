@@ -114,7 +114,7 @@ export const Myscent = () => {
       <section css={css`
                 position: absolute;
                 top: 75%;`}>
-        <Button to=''
+        <Button to='qrcode'
           buttonText="커스텀 디퓨저 저장하기"
           className={css`background-color: white; margin-bottom:5%;`}
           linkStyle={css`color: black;`} />
