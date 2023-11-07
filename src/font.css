@@ -14,9 +14,9 @@
     src: url('./assets/coolvetica.otf');
 }
 
-@font-face {
+/* @font-face {
     font-family: Baskerville;
-    src: url('./assets/Baskervville-Regular.ttf');}
+    src: url('./assets/Baskervville-Regular.ttf');} */
 
     body {
         font-family: NotoSansKR-Regular KaiseiOpti-Regular;
