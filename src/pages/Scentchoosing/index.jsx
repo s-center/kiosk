@@ -16,7 +16,7 @@ import { UserPreference } from '../../App'
 import { useMyScentNavigator } from '../../useMyScentNavigator'
 
 export const ScentChoosing = () => {
-  const [, setUserPreference] = useContext(UserPreference)
+  const [userPreference, setUserPreference] = useContext(UserPreference)
   const myScentNavigator = useMyScentNavigator()
 
   return (
@@ -28,7 +28,7 @@ export const ScentChoosing = () => {
       `}
       >
         <Layout downBanner="" mainCSS={css`height: 45%; flex-direction: column; justify-content: space-between;`}>
-          <TripleRowSlider css={css`height: 100%;`} onSelect={(id, kind) => setUserPreference(preference => ({ ...preference, scent: { ...preference.scent, [kind]: id } }))}>
+          <TripleRowSlider css={css`height: 100%;`} onSelect={(id, kind) => setUserPreference(({ ...userPreference, scent: { ...userPreference.scent, [kind]: id } }))}>
             <Group name='top'>
               <Row id='pear' image={pear} />
               <Row id='basil' image={basil} />

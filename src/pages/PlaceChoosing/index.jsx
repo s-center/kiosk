@@ -17,11 +17,11 @@ const Card = ({ id, image, ...props }) => (
   <Slide id={id} css={css`width: 71%; height: 60%; top: 60%;`} {...props}>
     <img src={image} css={css`width: 100%; height: 100%; object-fit: contain; pointer-events: none;`} onDragStart={() => false} />
   </Slide>
-  
+
 )
 
 export const PlaceChoosing = () => {
-  const [, setUserPreference] = useContext(UserPreference)
+  const [userPreference, setUserPreference] = useContext(UserPreference)
   const myScentNavigator = useMyScentNavigator()
 
   return (
@@ -37,7 +37,7 @@ export const PlaceChoosing = () => {
           justify-content: flex-start;
           align-content: center;
         `}
-          onSelect={place => setUserPreference(preference => ({ ...preference, place }))}
+          onSelect={place => setUserPreference(({ ...userPreference, place }))}
         >
           <Card id='bath-room' image={bathRoom} />
           <Card id='bed-room' image={bedRoom} />

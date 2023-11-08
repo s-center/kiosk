@@ -14,7 +14,7 @@ import passionateLabel from '../../assets/passionate-label.png'
 import sensualLabel from '../../assets/sensual-label.png'
 
 export const KeywordChoosing = () => {
-  const [, setUserPreference] = useContext(UserPreference)
+  const [userPreference, setUserPreference] = useContext(UserPreference)
   const myScentNavigator = useMyScentNavigator()
 
   const components = [
@@ -25,7 +25,7 @@ export const KeywordChoosing = () => {
       for='205' fog='112' fob='165'
       fir='243' fig='155' fib='167'
       maxRadius={300} minRadius={200} gradient={0.1} totalParticles={100} vx={2} vy={2}
-      key='lovely' onClick={() => setUserPreference(preference => ({ ...preference, keyword: currentComponentClassName.props.className }))}
+      key='lovely' onClick={() => setUserPreference(({ ...userPreference, keyword: currentComponentClassName.props.className }))}
       label={lovelyLabel} isLeft
     />,
     <Keyword className='sensual'
@@ -36,7 +36,7 @@ export const KeywordChoosing = () => {
       fir='194' fig='88' fib='222'
       maxRadius={250} minRadius={200} gradient={0.7} totalParticles={100}
       vx={3} vy={1}
-      key='sensual' onClick={() => setUserPreference(preference => ({ ...preference, keyword: currentComponentClassName.props.className }))}
+      key='sensual' onClick={() => setUserPreference(({ ...userPreference, keyword: currentComponentClassName.props.className }))}
       label={sensualLabel}
     />,
     <Keyword className='positive'
@@ -46,7 +46,7 @@ export const KeywordChoosing = () => {
       for='233' fog='253' fob='165'
       fir='181' fig='228' fib='45'
       maxRadius={400} minRadius={80} gradient={0.5} totalParticles={120} vx={3} vy={3}
-      key='positive' onClick={() => setUserPreference(preference => ({ ...preference, keyword: currentComponentClassName.props.className }))}
+      key='positive' onClick={() => setUserPreference(({ ...userPreference, keyword: currentComponentClassName.props.className }))}
       label={positiveLabel} isLeft
     />,
     <Keyword className="cold"
@@ -57,7 +57,7 @@ export const KeywordChoosing = () => {
       fir='6' fig='123' fib='229'
       maxRadius={300} minRadius={200} gradient={0.9} totalParticles={50}
       vx={2} vy={1}
-      key='cold' onClick={() => setUserPreference(preference => ({ ...preference, keyword: currentComponentClassName.props.className }))}
+      key='cold' onClick={() => setUserPreference(({ ...userPreference, keyword: currentComponentClassName.props.className }))}
       label={coldLabel}
     />,
     <Keyword className='calm'
@@ -68,7 +68,7 @@ export const KeywordChoosing = () => {
       fir='175' fig='124' fib='133'
       maxRadius={400} minRadius={300} gradient={0.7} totalParticles={50}
       vx={0.5} vy={0.5}
-      key='calm' onClick={() => setUserPreference(preference => ({ ...preference, keyword: currentComponentClassName.props.className }))}
+      key='calm' onClick={() => setUserPreference(({ ...userPreference, keyword: currentComponentClassName.props.className }))}
       label={calmLabel} isLeft
     />,
     <Keyword className='passionate'
@@ -79,7 +79,7 @@ export const KeywordChoosing = () => {
       fir='167' fig='1' fib='3'
       maxRadius={200} minRadius={90} gradient={0.7} totalParticles={4000}
       vx={1} vy={7}
-      key='passionate' onClick={() => setUserPreference(preference => ({ ...preference, keyword: currentComponentClassName.props.className }))}
+      key='passionate' onClick={() => setUserPreference(({ ...userPreference, keyword: currentComponentClassName.props.className }))}
       label={passionateLabel}
     />
   ]

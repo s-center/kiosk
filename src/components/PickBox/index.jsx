@@ -20,7 +20,7 @@ export const PickBox = ( props ) => {
 
     if (showX) {
       setUserPreference({
-        ...userPreference, 
+        ...userPreference,
         ...{ [props.target]: null, ...{ scent: { ...userPreference.scent, [props.target]: null } }   }
       })
     }

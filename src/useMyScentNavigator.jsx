@@ -15,15 +15,15 @@ function isObjectFilled(o) {
 }
 
 export const useMyScentNavigator = () => {
-  const [userPreference] = useContext(UserPreference)
+  const [userPreference, setUserPreference] = useContext(UserPreference)
   const isFinished = isObjectFilled(userPreference)
 
-  return isFinished && <OpaquePlane>
+  return isFinished && !userPreference.delayed && <OpaquePlane>
     <div css={css`position: absolute; bottom: 0; width: 100%; display: flex; align-items: center; flex-direction: column;`}>
       <Button buttonText='디퓨저 조향 시작하기' to='/myscent' className={css`margin-bottom: 200px;`} />
 
       <div css={css`background-color: black; width: 100%; height: 500px; display: flex; align-items: center; justify-content: center;`}>
-        <p css={css`text-align: center; color: white; font-family: NotoSansKR-Regular; font-size: 40px;`}>좀 더 생각해볼게요</p>
+        <p onClick={() => setUserPreference(userPreference, true)} css={css`text-align: center; color: white; font-family: NotoSansKR-Regular; font-size: 40px;`}>좀 더 생각해볼게요</p>
       </div>
     </div>
   </OpaquePlane>

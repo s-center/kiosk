@@ -20,7 +20,8 @@ export const UserPreference = createContext([{
     top: null,
     middle: null,
     bottom: null
-  }
+  },
+  delayed: false,
 }, () => { }])
 
 export const ScentSelectionStatus = createContext({ pos: null, setPos: () => { } })
@@ -33,12 +34,13 @@ export const App = () => {
       top: null,
       middle: null,
       bottom: null
-    }
+    },
+    delayed: false,
   })
   const [pos, setPos] = useState(0)
 
   return (
-    <UserPreference.Provider value={[userPreference, setUserPreference]}>
+    <UserPreference.Provider value={[userPreference, (nextState, delayed = false) => setUserPreference({ ...nextState, delayed })]}>
       <ScentSelectionStatus.Provider value={{ pos, setPos }}>
         <Switch>
           <Route exact path='/starting' component={Starting} />
