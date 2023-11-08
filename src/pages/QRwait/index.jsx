@@ -1,7 +1,7 @@
 import circle from '../../assets/circle.png'
 import { css } from '@emotion/react'
 import './QRwaid.css'
-import { navigate } from 'wouter/use-location';
+import { navigate } from 'wouter/use-location'
 export const QRwait = () => {
   function redirectToNewPage() {
     navigate('/qrcode')
