@@ -113,7 +113,7 @@ export const Product = ({ params: { product } }) => (
           </p>
         )
       }
-      <Button className={css`background-color: black; margin-top: 100px;`} to={`/buying/${product}`} buttonText='제품 구매하기'></Button>
+      <Button className={css`background-color: black; margin-top: 100px;`} to={`/receipt`} buttonText='제품 구매하기'></Button>
     </div>
   </div>
 )
