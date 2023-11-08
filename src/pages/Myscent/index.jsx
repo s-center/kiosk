@@ -58,28 +58,28 @@ export const Myscent = () => {
   else { col = 2 }
 
   const bottlechoose = [[lovely1, calm1, cold1, positive1, sensual1, passionate1],
-  [lovely2, calm2, cold2, positive2, sensual2, passionate2],
-  [lovely3, calm3, cold3, positive3, sensual3, passionate3]]
+    [lovely2, calm2, cold2, positive2, sensual2, passionate2],
+    [lovely3, calm3, cold3, positive3, sensual3, passionate3]]
 
   if (keyword === 'lovely') {
-    row = 0;
+    row = 0
   }
   else if (keyword === 'calm') {
-    row = 1;
+    row = 1
   }
   else if (keyword === 'cold') {
-    row = 2;
+    row = 2
   }
   else if (keyword === 'positive') {
-    row = 3;
+    row = 3
   }
   else if (keyword === 'sensual') {
-    row = 4;
+    row = 4
   }
   else if (keyword === 'passionate') {
-    row = 5;
+    row = 5
   }
-  const Bottle = bottlechoose[col][row];
+  const Bottle = bottlechoose[col][row]
 
   return (
 
@@ -96,8 +96,8 @@ export const Myscent = () => {
                     width: auto;
                     object-fit: contain
                     `}
-        src={BackgroundImg}
-        alt="배경이미지"></img>
+      src={BackgroundImg}
+      alt="배경이미지"></img>
 
       <Logo className="myscentLogo"
         css={css`
@@ -108,8 +108,9 @@ export const Myscent = () => {
       <img css={css`
                     position: absolute;
                     top: 15%;
-                    height:50%;`}
-        src={Bottle} alt={Bottle}></img>
+
+                    height:55%;`}
+      src={Bottle} alt={Bottle}></img>
 
       <section css={css`
                 position: absolute;
