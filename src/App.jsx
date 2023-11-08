@@ -8,6 +8,7 @@ import { KeywordChoosing } from './pages/KeywordChoosing'
 import { Recommand } from './pages/Recommand'
 import { BuyProduct } from './pages/BuyProduct'
 import { QRcode } from './pages/QRcode'
+import { Guide } from './pages/Guide'
 import { createContext, useState } from 'react'
 
 export const UserPreference = createContext([{
@@ -41,6 +42,7 @@ export const App = () => {
           <Route exact path='/starting' component={Starting} />
           <Route path='/recommand' component={Recommand} />
           <Route path='/choosing' component={Choosing} />
+          <Route path='/guiding' component={Guide}/>
           <Route path='/placechoosing' component={PlaceChoosing} />
           <Route path='/keywordchoosing' component={KeywordChoosing} />
           <Route path='/scentchoosing' component={ScentChoosing} />

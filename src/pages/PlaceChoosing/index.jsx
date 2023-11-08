@@ -11,6 +11,7 @@ import shoeCloset from '../../assets/shoe-closet.png'
 import { useContext } from 'react'
 import { UserPreference } from '../../App'
 import { useMyScentNavigator } from '../../useMyScentNavigator'
+import { useState } from 'react'
 
 const Card = ({ id, image, ...props }) => (
   <Slide id={id} css={css`width: 71%; height: 60%; top: 60%;`} {...props}>

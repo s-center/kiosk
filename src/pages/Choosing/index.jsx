@@ -118,7 +118,7 @@ export const Choosing = () => {
           z-index:9;
          `}>
 
-        <Button buttonText='디퓨저 조향 시작하기' to='/placechoosing' className="steerStartButton" />
+        <Button buttonText='디퓨저 조향 시작하기' to='/guiding' className="steerStartButton" />
         <Button buttonText='제품 추천 받기' to='/recommand' className="recommedButton" />
 
 

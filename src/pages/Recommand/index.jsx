@@ -33,7 +33,14 @@ export const Recommand = () => {
             <Link to='/buyProduct'>
                 <img src={Applo} alt="아폴로" className="Applo" />
             </Link>
-
+            <p css={css`color:rgb(255,255,255); 
+                        position: relative; 
+                        top :90%; 
+                        left: 35%; 
+                        font-size: 200%; 
+                        text-shadow: 5px 5px 20px rgb(255,255,255);
+                        z-index:9;
+                        `}>이미지를 터치해보세요</p>
 
         </div>
     )
