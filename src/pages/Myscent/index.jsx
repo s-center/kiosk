@@ -108,7 +108,7 @@ export const Myscent = () => {
       <img css={css`
                     position: absolute;
                     top: 15%;
-                    height:55%;`}
+                    height:50%;`}
         src={Bottle} alt={Bottle}></img>
 
       <section css={css`
