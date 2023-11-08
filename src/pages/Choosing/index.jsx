@@ -65,14 +65,14 @@ export const Choosing = () => {
             text-transform: uppercase;
             z-index:9;
             font-family:Baskerville;
-            margin-bottom:4%; 
+            margin-bottom:3%; 
            
             `}>
           You are </p>
         <p
           css={css`
             color: #FFF;
-            font-size: 100px;
+            font-size: 80px;
             font-style: normal;
             line-height: 45.339px;
             text-transform: uppercase;
@@ -90,8 +90,8 @@ export const Choosing = () => {
           text-align: center;
           font-size: 37px;
           font-style: normal;
-          font-weight: 100;
-          line-height: 87px;
+          font-weight: ligter;
+          line-height: 75px;
           text-transform: uppercase;
           z-index:9;
           font-family: NotoSansKR-Regular;

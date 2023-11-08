@@ -9,6 +9,7 @@ import { Recommand } from './pages/Recommand'
 import { Product } from './pages/Product'
 import { QRcode } from './pages/QRcode'
 import { Guide } from './pages/Guide'
+import { QRwait } from './pages/QRwait'
 import { createContext, useState } from 'react'
 
 export const UserPreference = createContext([{
@@ -48,7 +49,9 @@ export const App = () => {
           <Route path='/scentchoosing' component={ScentChoosing} />
           <Route path='/product/:product' component={Product} />
           <Route path="/myscent"> <Myscent middle={userPreference.scent.bottom} /></Route>
+          <Route path='/qrwait' component={QRwait}/>
           <Route path='/qrcode' component={QRcode}></Route>
+
 
           <Route><Redirect to='/starting' /> {/** Or should we redirect to 404 page? */}</Route>
         </Switch>
