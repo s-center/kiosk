@@ -119,7 +119,7 @@ export const Myscent = () => {
           className={css`background-color: white; margin-bottom:5%;`}
           linkStyle={css`color: black;`} />
 
-        <Button to=''
+        <Button to='/recommand'
           buttonText="시제품 추천받기"
           className={css`background-color: white;`}
           linkStyle={css`color: black;`} />
