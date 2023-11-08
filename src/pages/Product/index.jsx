@@ -8,7 +8,7 @@ import ProductConfig from './product-config.json'
 
 import { Button } from '../../components/Button/index.jsx'
 
-export const Product = ({ params: { product }}) => (
+export const Product = ({ params: { product } }) => (
   <div
     css={css`
       background: linear-gradient(black 25%, ${ProductConfig[product]['background-color']});
@@ -85,6 +85,7 @@ export const Product = ({ params: { product }}) => (
               font-weight: bold;
               font-family: Baskerville;
               text-align: center;
+              line-height: 1.5;
             `}
               key={index}
             >
@@ -99,6 +100,7 @@ export const Product = ({ params: { product }}) => (
             css={css`
               color: #FFF;
               font-size: 28px;
+              line-height: 1.5;
             `}
             key={index}
           >
