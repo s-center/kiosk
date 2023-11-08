@@ -4,6 +4,7 @@ import { useContext, useState } from 'react'
 import { css } from '@emotion/react'
 import { NextPageButton } from '../../components/Button/nextPageButton'
 import { UserPreference } from '../../App.jsx'
+import { useMyScentNavigator } from '../../useMyScentNavigator'
 
 import lovelyLabel from '../../assets/lovely-label.png'
 import positiveLabel from '../../assets/positive-label.png'
@@ -14,6 +15,7 @@ import sensualLabel from '../../assets/sensual-label.png'
 
 export const KeywordChoosing = () => {
   const [, setUserPreference] = useContext(UserPreference)
+  const myScentNavigator = useMyScentNavigator()
 
   const components = [
     <Keyword className='lovely'
@@ -100,17 +102,19 @@ export const KeywordChoosing = () => {
   const currentComponentClassName = components[currentComponentIndex]
 
   return (
-    <Layout downBanner='none'>
-      <div css={css` width: 100%; height: 100%; position: fixed; top:0;`}>
-        {currentComponentClassName}
-        <NextPageButton onClick={() => {
-          changeComponent(1)
-        }} />
-        <NextPageButton reversed onClick={() => {
-          changeComponent(-1)
-        }} />
-      </div>
-    </Layout>
-
+    <>
+      <Layout downBanner='none'>
+        <div css={css` width: 100%; height: 100%; position: fixed; top:0;`}>
+          {currentComponentClassName}
+          <NextPageButton onClick={() => {
+            changeComponent(1)
+          }} />
+          <NextPageButton reversed onClick={() => {
+            changeComponent(-1)
+          }} />
+        </div>
+      </Layout>
+      {myScentNavigator}
+    </>
   )
 }
