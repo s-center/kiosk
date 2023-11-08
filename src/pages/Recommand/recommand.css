@@ -1,0 +1,66 @@
+.jeus {
+    animation: sizeChange 8s infinite ease;
+    width: 30%;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+
+.eros {
+    animation: sizeChange 10s infinite ease;
+    width: 35%;
+    position: absolute;
+    top: 11%;
+    left: 60%;
+}
+
+.icarus {
+    animation: sizeChange 7s infinite ease;
+    width: 25%;
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    z-index: 3;
+}
+
+.aphrodite {
+    animation: sizeChange 15s infinite ease;
+    width: 40%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 4
+}
+
+.athens {
+    animation: sizeChange 9s infinite ease;
+    width: 24%;
+    position: absolute;
+    top: 70%;
+    left: 66%;
+    z-index: 2;
+}
+
+.Applo {
+    animation: sizeChange 6s infinite ease;
+    width: 40%;
+    position: absolute;
+    top: 60%;
+    left: 18%;
+    z-index: 1;
+}
+
+@keyframes sizeChange {
+
+    0% {
+        transform: scale(1.0);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1.0);
+    }
+}

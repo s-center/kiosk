@@ -5,6 +5,9 @@ import { Myscent } from './pages/Myscent'
 import { ScentChoosing } from './pages/Scentchoosing'
 import { PlaceChoosing } from './pages/PlaceChoosing'
 import { KeywordChoosing } from './pages/KeywordChoosing'
+import { Recommand } from './pages/Recommand'
+import { BuyProduct } from './pages/BuyProduct'
+import { QRcode } from './pages/QRcode'
 import { createContext, useState } from 'react'
 
 export const UserPreference = createContext([{
@@ -15,9 +18,9 @@ export const UserPreference = createContext([{
     middle: null,
     bottom: null
   }
-}, () => {}])
+}, () => { }])
 
-export const ScentSelectionStatus = createContext({ pos: null, setPos: () => {}})
+export const ScentSelectionStatus = createContext({ pos: null, setPos: () => {} })
 
 export const App = () => {
   const [userPreference, setUserPreference] = useState({
@@ -35,12 +38,16 @@ export const App = () => {
     <UserPreference.Provider value={[userPreference, setUserPreference]}>
       <ScentSelectionStatus.Provider value={{ pos, setPos }}>
         <Switch>
-          <Route exact path='/starting' component={ Starting } />
-          <Route path='/choosing' component={ Choosing } />
-          <Route path='/placechoosing' component={ PlaceChoosing } />
-          <Route path='/keywordchoosing' component={ KeywordChoosing } />
-          <Route path ='/scentchoosing' component={ ScentChoosing }/>
-          <Route path="/myscent"> <Myscent base={userPreference.scent.bottom}/> </Route> {/* 예시 props. 나중에는 자동으로 받아서 될 것 */}
+          <Route exact path='/starting' component={Starting} />
+          <Route path='/recommand' component={Recommand} />
+          <Route path='/choosing' component={Choosing} />
+          <Route path='/placechoosing' component={PlaceChoosing} />
+          <Route path='/keywordchoosing' component={KeywordChoosing} />
+          <Route path='/scentchoosing' component={ScentChoosing} />
+          <Route path='/buyProduct' component={BuyProduct} />
+          <Route path="/myscent"> <Myscent middle={userPreference.scent.bottom} /></Route>
+          <Route path='/qrcode' component ={ QRcode }></Route>
+
           <Route><Redirect to='/starting' /> {/** Or should we redirect to 404 page? */}</Route>
         </Switch>
       </ScentSelectionStatus.Provider>
