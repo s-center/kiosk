@@ -150,11 +150,11 @@ export const Layout= ( props ) =>{
                             padding: 0 30px 0 30px;
                             `}>
 
-        <PickBox className="place" img={nameToPreviewImage(userPreference.place)}/>
-        <PickBox className="keyword" img ={nameToPreviewImage(userPreference.keyword)}/>
-        <PickBox className="top" img ={nameToPreviewImage(userPreference.scent.top)}/>
-        <PickBox className="middle" img ={nameToPreviewImage(userPreference.scent.middle)}/>
-        <PickBox className="base" img ={nameToPreviewImage(userPreference.scent.bottom)}/>
+        <PickBox className="place" target='place' img={nameToPreviewImage(userPreference.place)}/>
+        <PickBox className="keyword" target='place' img ={nameToPreviewImage(userPreference.keyword)}/>
+        <PickBox className="top" target='top' img ={nameToPreviewImage(userPreference.scent.top)}/>
+        <PickBox className="middle" target='middle' img ={nameToPreviewImage(userPreference.scent.middle)}/>
+        <PickBox className="base" target='bottom' img ={nameToPreviewImage(userPreference.scent.bottom)}/>
 
       </div>
       <hr css = {css`
@@ -202,7 +202,7 @@ function nameToPreviewImage(name) {
     return muskPreview
   case 'vanilla':
     return vanillaPreview
-  case 'lovely': 
+  case 'lovely':
     return lovelyPreview
   case 'positive':
     return positivePreview
