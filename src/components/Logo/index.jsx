@@ -1,4 +1,4 @@
-import logo from '../../assets/logo.png'
+import logo from '../../assets/logo.svg'
 import { Link } from 'wouter'
 import { useContext } from 'react'
 import { UserPreference } from '../../App'
