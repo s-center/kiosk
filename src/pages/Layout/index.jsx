@@ -151,7 +151,7 @@ export const Layout= ( props ) =>{
                             `}>
 
         <PickBox className="place" target='place' img={nameToPreviewImage(userPreference.place)}/>
-        <PickBox className="keyword" target='place' img ={nameToPreviewImage(userPreference.keyword)}/>
+        <PickBox className="keyword" target='keyword' img ={nameToPreviewImage(userPreference.keyword)}/>
         <PickBox className="top" target='top' img ={nameToPreviewImage(userPreference.scent.top)}/>
         <PickBox className="middle" target='middle' img ={nameToPreviewImage(userPreference.scent.middle)}/>
         <PickBox className="base" target='bottom' img ={nameToPreviewImage(userPreference.scent.bottom)}/>
