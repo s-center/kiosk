@@ -2,6 +2,8 @@ import { css } from '@emotion/react'
 
 import GodBottle from '../../assets/GodBottle.png'
 import Package from '../../assets/Package.png'
+import BottleShadow from '../../assets/bottle-shadow.png'
+import PackageShadow from '../../assets/package-shadow.png'
 import ProductConfig from './product-config.json'
 
 import { Button } from '../../components/Button/index.jsx'
@@ -20,9 +22,17 @@ export const Product = ({ params: { product }}) => (
         css={css`
           position: absolute;
           top: 218px;
-          left: 218px;
+          left: 228px;
         `}
         src={Package}
+      />
+      <img
+        css={css`
+          position: absolute;
+          top: 823px;
+          left: 299px;
+        `}
+        src={PackageShadow}
       />
       <img
         css={css`
@@ -31,6 +41,14 @@ export const Product = ({ params: { product }}) => (
           left: 452px;
         `}
         src={GodBottle}
+      />
+      <img
+        css={css`
+          position: absolute;
+          top: 964px;
+          left: 516px;
+        `}
+        src={BottleShadow}
       />
     </div>
     <div
