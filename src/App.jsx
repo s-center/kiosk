@@ -6,7 +6,7 @@ import { ScentChoosing } from './pages/Scentchoosing'
 import { PlaceChoosing } from './pages/PlaceChoosing'
 import { KeywordChoosing } from './pages/KeywordChoosing'
 import { Recommand } from './pages/Recommand'
-import { BuyProduct } from './pages/BuyProduct'
+import { Product } from './pages/Product'
 import { QRcode } from './pages/QRcode'
 import { Guide } from './pages/Guide'
 import { createContext, useState } from 'react'
@@ -46,7 +46,7 @@ export const App = () => {
           <Route path='/placechoosing' component={PlaceChoosing} />
           <Route path='/keywordchoosing' component={KeywordChoosing} />
           <Route path='/scentchoosing' component={ScentChoosing} />
-          <Route path='/buyProduct' component={BuyProduct} />
+          <Route path='/product/:product' component={Product} />
           <Route path="/myscent"> <Myscent middle={userPreference.scent.bottom} /></Route>
           <Route path='/qrcode' component ={ QRcode }></Route>
 

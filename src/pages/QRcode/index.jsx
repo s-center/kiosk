@@ -6,6 +6,7 @@ import qrBackground from '../../assets/QRimage/qrBackground.png'
 import { Button } from '../../components/Button'
 import QRCODE from '../../assets/QRCODE.png'
 export const QRcode = () => {
+
     return (
         <div>
             <img src={qrBackground} alt="배경" css={css`width:100%; height:100%; position: absolute; z-index:-1;`} />
@@ -31,4 +32,5 @@ export const QRcode = () => {
             </div>
         </div>
     )
+
 }
