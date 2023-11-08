@@ -14,23 +14,23 @@ export const Recommand = () => {
 
     return (
         <div css={css` width :100%; height:100%; background-color: rgba(0,0,0,1);`}>
-            <Logo css={css` width: 80%; position:absolute; top:5%; left: 8%; z-index: 9;`} />
-            <Link to='/buyProduct'>
+            <Logo css={css` width: 50%; position:absolute; top:5%; left: 26%; z-index: 9;`} />
+            <Link to='/product/jeus'>
                 <img src={Jeus} alt="제우스" className="jeus" />
             </Link>
-            <Link to='/buyProduct'>
+            <Link to='/product/eros'>
                 <img src={Eros} alt='에로스' className="eros" />
             </Link>
-            <Link to='/buyProduct'>
+            <Link to='/product/icarus'>
                 <img src={Icarus} alt='이카루스' className="icarus" />
             </Link>
-            <Link to='/buyProduct'>
+            <Link to='/product/aphrodite'>
                 <img src={Aphrodite} alt='아프로디테' className="aphrodite" />
             </Link>
-            <Link to='/buyProduct'>
+            <Link to='/product/athens'>
                 <img src={Athens} alt="아테네" className="athens" />
             </Link>
-            <Link to='/buyProduct'>
+            <Link to='/product/applo'>
                 <img src={Applo} alt="아폴로" className="Applo" />
             </Link>
             <p css={css`color:rgb(255,255,255); 

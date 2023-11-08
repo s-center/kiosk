@@ -9,6 +9,7 @@ import { Recommand } from './pages/Recommand'
 import { Product } from './pages/Product'
 import { QRcode } from './pages/QRcode'
 import { Guide } from './pages/Guide'
+import { QRwait } from './pages/QRwait'
 import { createContext, useState } from 'react'
 
 export const UserPreference = createContext([{
@@ -21,7 +22,7 @@ export const UserPreference = createContext([{
   }
 }, () => { }])
 
-export const ScentSelectionStatus = createContext({ pos: null, setPos: () => {} })
+export const ScentSelectionStatus = createContext({ pos: null, setPos: () => { } })
 
 export const App = () => {
   const [userPreference, setUserPreference] = useState({
@@ -42,13 +43,15 @@ export const App = () => {
           <Route exact path='/starting' component={Starting} />
           <Route path='/recommand' component={Recommand} />
           <Route path='/choosing' component={Choosing} />
-          <Route path='/guiding' component={Guide}/>
+          <Route path='/guiding' component={Guide} />
           <Route path='/placechoosing' component={PlaceChoosing} />
           <Route path='/keywordchoosing' component={KeywordChoosing} />
           <Route path='/scentchoosing' component={ScentChoosing} />
           <Route path='/product/:product' component={Product} />
           <Route path="/myscent"> <Myscent middle={userPreference.scent.bottom} /></Route>
-          <Route path='/qrcode' component ={ QRcode }></Route>
+          <Route path='/qrwait' component={QRwait}/>
+          <Route path='/qrcode' component={QRcode}></Route>
+
 
           <Route><Redirect to='/starting' /> {/** Or should we redirect to 404 page? */}</Route>
         </Switch>

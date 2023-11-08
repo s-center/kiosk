@@ -17,7 +17,7 @@ export const Button = ({ buttonText, to, className, linkStyle }) => {
     margin-bottom: 8%;
     font-size: 40px;
     border:none;
-    font-family : NotoSansKR-Regular;
+    font-family : NotoSansKR-Bold;
     `
 
   return (

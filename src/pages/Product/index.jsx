@@ -8,7 +8,7 @@ import ProductConfig from './product-config.json'
 
 import { Button } from '../../components/Button/index.jsx'
 
-export const Product = ({ params: { product }}) => (
+export const Product = ({ params: { product } }) => (
   <div
     css={css`
       background: linear-gradient(black 25%, ${ProductConfig[product]['background-color']});
@@ -21,32 +21,34 @@ export const Product = ({ params: { product }}) => (
       <img
         css={css`
           position: absolute;
-          top: 218px;
-          left: 228px;
+          top: 100px;
+          left: 180px;
         `}
         src={Package}
       />
       <img
         css={css`
           position: absolute;
-          top: 823px;
-          left: 299px;
+          top: 750px;
+          left: 251px;
+          
         `}
         src={PackageShadow}
       />
       <img
         css={css`
           position: absolute;
-          top: 178px;
-          left: 452px;
+          top: 180px;
+          left: 445px;
+          width:44%;
         `}
         src={GodBottle}
       />
       <img
         css={css`
           position: absolute;
-          top: 964px;
-          left: 516px;
+          top: 900px;
+          left: 495px;
         `}
         src={BottleShadow}
       />
@@ -54,7 +56,7 @@ export const Product = ({ params: { product }}) => (
     <div
       css={css`
         position: absolute;
-        top: 1100px;
+        top: 1000px;
       
         display: flex;
         flex-direction: column;
@@ -67,9 +69,10 @@ export const Product = ({ params: { product }}) => (
       <p
         css={css`
         color: #FFF;
-        font-size: 40px;
+        font-size: 35px;
         font-family: Baskerville;
-        
+        position: relative;
+        top: 20px;
         margin-bottom: 50px;
       `}
       >
@@ -83,8 +86,10 @@ export const Product = ({ params: { product }}) => (
               color: #FFF;
               font-size: 48px;
               font-weight: bold;
-              font-family: Baskerville;
+              font-family: NotoSansKR-Mideum;
               text-align: center;
+              line-height:1.8;
+              letter-spacing:-2px;
             `}
               key={index}
             >
@@ -99,6 +104,8 @@ export const Product = ({ params: { product }}) => (
             css={css`
               color: #FFF;
               font-size: 28px;
+              line-height: 1.9;
+              font-family:NotoSansKR-Light;
             `}
             key={index}
           >
@@ -106,7 +113,7 @@ export const Product = ({ params: { product }}) => (
           </p>
         )
       }
-      <Button className={css`background-color: black; margin-top: 140px;`} to={`/buying/${product}`} buttonText='제품 구매하기'></Button>
+      <Button className={css`background-color: black; margin-top: 100px;`} to={`/buying/${product}`} buttonText='제품 구매하기'></Button>
     </div>
   </div>
 )
