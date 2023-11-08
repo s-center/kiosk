@@ -8,36 +8,42 @@ export const PickBox = ( props ) => {
   const [showX, setShowX] = useState(false)
 
   const handleDivClick = () => {
-    setImageOpacity ( imageOpacity === 1 ? 0 : 1 )
+    setImageOpacity(imageOpacity === 1 ? 0 : 1)
     setShowX(!showX)
   }
+  
+  const handleInnerDivClick = (e) => {
+    e.stopPropagation()
+    setShowX(false)
 
-  return(
-    <div className = {props.className}
-      css = {css`
+  }
+
+  return (
+    <div className={props.className}
+      css={css`
                         background-color: rgba(255,255,255,0.5);
                         width: 140px;
                         height: 140px;
                         position: relative;
                         margin: 0;`}
 
-      onClick = {handleDivClick}>
+      onClick={handleDivClick}>
 
-      <img src = {props.img ?? greyDefaultBackground}
-        css = {css`
+      <img src={props.img ?? greyDefaultBackground}
+        css={css`
                                     opacity : imageOpacity;
                                     display: showX ? 'none' : 'block';
                                     width: 100%;
                                     height: 100%;
-                                    `}/>
-      {showX && ( <div
-        css = {css`
+                                    `} />
+      {showX && (<div
+        css={css`
                                 background-color: rgba(0,0,0,0.5);
                                 width: 140px;
                                 height: 140px;
                                 
                                 position: relative;
-                                top: -12%;
+                                top: -100%;
 
                                 margin: 0;
                                 color: white;
@@ -47,12 +53,14 @@ export const PickBox = ( props ) => {
                                 justify-content: space-around;
                                 `}
 
-        onClick = {(e) => {
-          e.stopProgagation()
-          setShowX(false)}}>
-        <p css = {css`
-                                                font-size: 140px;
+        onClick={handleInnerDivClick}>
+
+
+        <p css={css`
+                                                font-size: 100px;
                                                 font-family: xx;
+                                                position: relative; 
+                                                top:0%;
                                                 `}>X</p>
       </div>)}
 
