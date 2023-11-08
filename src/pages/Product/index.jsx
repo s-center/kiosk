@@ -11,7 +11,7 @@ import { Button } from '../../components/Button/index.jsx'
 export const Product = ({ params: { product }}) => (
   <div
     css={css`
-      background: linear-gradient(black 20%, rgb(70, 70, 70) 50%, ${ProductConfig[product]['background-color']});
+      background: linear-gradient(black 25%, ${ProductConfig[product]['background-color']});
       
       width: 100%;
       height: 100%;
@@ -67,7 +67,7 @@ export const Product = ({ params: { product }}) => (
       <p
         css={css`
         color: #FFF;
-        font-size: 48px;
+        font-size: 40px;
         font-family: Baskerville;
         
         margin-bottom: 50px;
@@ -106,7 +106,7 @@ export const Product = ({ params: { product }}) => (
           </p>
         )
       }
-      <Button className={css`background-color: black; margin-top: 140px;`} to='' buttonText='제품 구매하기'></Button>
+      <Button className={css`background-color: black; margin-top: 140px;`} to={`/buying/${product}`} buttonText='제품 구매하기'></Button>
     </div>
   </div>
 )
