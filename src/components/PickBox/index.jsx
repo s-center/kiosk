@@ -1,21 +1,29 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { css } from '@emotion/react'
 
 import greyDefaultBackground from '../../assets/grey-default-background.png'
+import { UserPreference } from '../../App.jsx';
 
 export const PickBox = ( props ) => {
   const [imageOpacity, setImageOpacity] = useState(1)
   const [showX, setShowX] = useState(false)
+  const [userPreference, setUserPreference] = useContext(UserPreference)
 
   const handleDivClick = () => {
     setImageOpacity(imageOpacity === 1 ? 0 : 1)
     setShowX(!showX)
   }
-  
+
   const handleInnerDivClick = (e) => {
     e.stopPropagation()
     setShowX(false)
 
+    if (showX) {
+      setUserPreference({
+        ...userPreference, 
+        ...{ [props.target]: null, ...{ scent: { ...userPreference.scent, [props.target]: null } }   }
+      })
+    }
   }
 
   return (
