@@ -1,9 +1,10 @@
 import circle from '../../assets/circle.png'
 import { css } from '@emotion/react'
 import './QRwaid.css'
+import { navigate } from 'wouter/use-location'
 export const QRwait = () => {
   function redirectToNewPage() {
-    window.location.href = '/qrcode'
+    navigate('/qrcode')
   }
 
   // 7초 후에 redirectToNewPage 함수를 실행
