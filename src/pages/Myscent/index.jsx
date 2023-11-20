@@ -1,9 +1,9 @@
 import { Logo } from '../../components/Logo/index'
 import { css } from '@emotion/react'
 import { Button } from '../../components/Button/index'
-import Freesia from '../../assets/backgroundImg/freesia.png'
-import Jasmin from '../../assets/backgroundImg/jasmin.png'
-import Peony from '../../assets/backgroundImg/peony.png'
+import Freesia from '../../assets/backgroundImg/freesia.jpg'
+import Jasmin from '../../assets/backgroundImg/jasmin.jpg'
+import Peony from '../../assets/backgroundImg/peony.jpg'
 import { useContext } from 'react'
 import { UserPreference } from '../../App'
 
