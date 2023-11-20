@@ -1,9 +1,9 @@
 import { css } from '@emotion/react'
 
-import GodBottle from '../../assets/GodBottle.png'
-import Package from '../../assets/Package.png'
-import BottleShadow from '../../assets/bottle-shadow.png'
-import PackageShadow from '../../assets/package-shadow.png'
+import GodBottle from '../../assets/recommand/GodBottle.png'
+import Package from '../../assets/recommand/Package.png'
+import BottleShadow from '../../assets/recommand/bottle-shadow.png'
+import PackageShadow from '../../assets/recommand/package-shadow.png'
 import ProductConfig from './product-config.json'
 
 import { Button } from '../../components/Button/index.jsx'

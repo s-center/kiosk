@@ -3,12 +3,12 @@ import { Logo } from '../../components/Logo'
 import { css } from '@emotion/react'
 import { Link } from 'wouter'
 import './recommand.css'
-import Jeus from '../../assets/recommandItem/jeus.png'
-import Icarus from '../../assets/recommandItem/icarus.png'
-import Eros from '../../assets/recommandItem/eros.png'
-import Athens from '../../assets/recommandItem/athens.png'
-import Applo from '../../assets/recommandItem/applo.png'
-import Aphrodite from '../../assets/recommandItem/aphrodite.png'
+import Jeus from '../../assets/recommandItem/jeus.jpg'
+import Icarus from '../../assets/recommandItem/icarus.jpg'
+import Eros from '../../assets/recommandItem/eros.jpg'
+import Athens from '../../assets/recommandItem/athens.jpg'
+import Applo from '../../assets/recommandItem/applo.jpg'
+import Aphrodite from '../../assets/recommandItem/aphrodite.jpg'
 
 export const Recommand = () => {
 
