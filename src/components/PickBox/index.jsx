@@ -19,10 +19,17 @@ export const PickBox = ( props ) => {
     setShowX(false)
 
     if (showX) {
-      setUserPreference({
-        ...userPreference, 
-        ...{ [props.target]: null, ...{ scent: { ...userPreference.scent, [props.target]: null } }   }
-      })
+      if (props.target === 'place' || props.target === 'keyword') {
+        setUserPreference({
+          ...userPreference,
+          ...{ [props.target]: null }
+        })
+      } else {
+        setUserPreference({
+          ...userPreference,
+          scent: { ...userPreference.scent, [props.target]: null },
+        })
+      }
     }
   }
 

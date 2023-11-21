@@ -1,35 +1,40 @@
 @font-face {
     font-family: KaiseiOpti-Regular;
-    src: url("./assets/KaiseiOpti-Regular.ttf");
+    src: url("./assets/KaiseiOpti-Regular.woff2");
+    unicode-range:  U+0041-005A,  U+0061-007A;
 }
 
 @font-face {
     font-family: NotoSansKR-Regular;
-    src: url("./assets/NotoSansKR-Regular.otf");
-    unicode-range: U+AC00-D7A3;
+    src: url("./assets/NotoSansKR-Regular.woff2");
+    unicode-range: U+000-5FF, U+AC00-D7AF; /* Latin + Korean */
 }
 
 @font-face {
     font-family: NotoSansKR-Light;
-    src: url("./assets/NotoSansKR-Light.ttf");
+    src: url("./assets/NotoSansKR-Light.woff2");
+    unicode-range: U+000-5FF, U+AC00-D7AF; /* Latin + Korean */
 }
 @font-face {
     font-family: NotoSansKR-Bold;
-    src: url("./assets/NotoSansKR-Bold.ttf");
+    src: url("./assets/NotoSansKR-Bold.woff2");
+    unicode-range: U+000-5FF, U+AC00-D7AF; /* Latin + Korean */
 }
 @font-face {
     font-family: coolvetica;
-    src: url('./assets/coolvetica.otf');
+    src: url('./assets/coolvetica.woff2');
 }
 
 @font-face {
     font-family: NotoSansKR-Medium;
-    src: url('./assets/NotoSansKR-Medium.ttf');
+    src: url('./assets/NotoSansKR-Medium.woff2');
+    unicode-range: U+000-5FF, U+AC00-D7AF; /* Latin + Korean */
 }
 
 @font-face {
     font-family: Baskerville;
-    src: url('./assets/Baskervville-Regular.ttf');
+    src: url('./assets/Baskervville-Regular.woff2');
+    unicode-range:  U+0041-005A,  U+0061-007A;
 }
 
 body {

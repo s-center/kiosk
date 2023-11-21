@@ -2,21 +2,21 @@ import { Layout } from '../Layout/index'
 import { css } from '@emotion/react'
 import { Group, Row, TripleRowSlider } from '../../components/TripleRowSlider'
 
-import pear from '../../assets/pear.png'
-import basil from '../../assets/basil.png'
-import lavender from '../../assets/lavender.png'
-import freesia from '../../assets/freesia.png'
-import jasmin from '../../assets/jasmin.png'
-import peony from '../../assets/peony.png'
-import cedarwood from '../../assets/cedarwood.png'
-import musk from '../../assets/musk.png'
-import vanilla from '../../assets/vanilla.png'
+import pear from '../../assets/rowBanner/pear.png'
+import basil from '../../assets/rowBanner/basil.png'
+import lavender from '../../assets/rowBanner/lavender.png'
+import freesia from '../../assets/rowBanner/freesia.png'
+import jasmin from '../../assets/rowBanner/jasmin.png'
+import peony from '../../assets/rowBanner/peony.png'
+import cedarwood from '../../assets/rowBanner/cedarwood.png'
+import musk from '../../assets/rowBanner/musk.png'
+import vanilla from '../../assets/rowBanner/vanilla.png'
 import { useContext } from 'react'
 import { UserPreference } from '../../App'
 import { useMyScentNavigator } from '../../useMyScentNavigator'
 
 export const ScentChoosing = () => {
-  const [, setUserPreference] = useContext(UserPreference)
+  const [userPreference, setUserPreference] = useContext(UserPreference)
   const myScentNavigator = useMyScentNavigator()
 
   return (
@@ -28,7 +28,7 @@ export const ScentChoosing = () => {
       `}
       >
         <Layout downBanner="" mainCSS={css`height: 45%; flex-direction: column; justify-content: space-between;`}>
-          <TripleRowSlider css={css`height: 100%;`} onSelect={(id, kind) => setUserPreference(preference => ({ ...preference, scent: { ...preference.scent, [kind]: id } }))}>
+          <TripleRowSlider css={css`height: 100%;`} onSelect={(id, kind) => setUserPreference(({ ...userPreference, scent: { ...userPreference.scent, [kind]: id } }))}>
             <Group name='top'>
               <Row id='pear' image={pear} />
               <Row id='basil' image={basil} />

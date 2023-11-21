@@ -57,6 +57,7 @@ export const Guide = () => {
         top :50%; 
         left: 32%; 
         font-size:45px;
+         font-family:NotoSansKR-Regular;
         text-shadow: 5px 5px 30px rgb(255,255,255);`}>디퓨저 병을 감싸줄</p>
         <p css={css`
       color:rgb(255,255,255); 
@@ -64,7 +65,7 @@ export const Guide = () => {
       top :51%; 
       left: 35%; 
       font-size: 45px;
-      text-shadow: 5px 5px 30px rgb(255,255,255);`}>색을 선택합니다</p></div>
+      text-shadow: 5px 5px 30px rgb(255,255,255);  font-family:NotoSansKR-Regular;`}>색을 선택합니다</p></div>
     )}
     {(isDivVisiblechoose === 1 && isDivVisibleKeyword === 2 && isDivVisibleScent === 3) && (<KeywordChoosing />)}
 
@@ -83,14 +84,14 @@ export const Guide = () => {
         top :50%; 
         left: 33%; 
         font-size: 45px;
-        text-shadow: 5px 5px 30px rgb(255,255,255);`}>디퓨저에 넣고싶은</p>
+        text-shadow: 5px 5px 30px rgb(255,255,255);  font-family:NotoSansKR-Regular;`}>디퓨저에 넣고싶은</p>
           <p css={css`
       color:rgb(255,255,255); 
       position: relative; 
       top :51%; 
       left: 35%; 
       font-size: 45px; 
-      text-shadow: 5px 5px 30px rgb(255,255,255);`}>향을 선택합니다</p></div></Link>
+      text-shadow: 5px 5px 30px rgb(255,255,255);  font-family:NotoSansKR-Regular;`}>향을 선택합니다</p></div></Link>
     )}
     {(isDivVisiblechoose === 2 && isDivVisibleKeyword === 4 && isDivVisibleScent === 6) && (<ScentChoosing />)}
 

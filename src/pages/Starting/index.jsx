@@ -5,10 +5,10 @@ import styled from '@emotion/styled'
 
 import { Logo } from '../../components/Logo'
 
-import geryCircle from '../../assets/grey-circle.svg'
-import blackCircle from '../../assets/black-circle.svg'
-import handUp from '../../assets/hand-up.svg'
-import handDown from '../../assets/hand-down.svg'
+import geryCircle from '../../assets/startPage/grey-circle.svg'
+import blackCircle from '../../assets/startPage/black-circle.svg'
+import handUp from '../../assets/startPage/hand-up.svg'
+import handDown from '../../assets/startPage/hand-down.svg'
 
 const Background = styled.div`
   width: 100%;

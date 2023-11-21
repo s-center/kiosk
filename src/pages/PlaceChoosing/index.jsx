@@ -2,26 +2,26 @@ import { Layout } from '../Layout'
 import { css } from '@emotion/react'
 import { Slider, Slide } from '../../components/Slider'
 
-import bathRoom from '../../assets/bath-room.png'
-import bedRoom from '../../assets/bed-room.png'
-import kidsRoom from '../../assets/kids-room.png'
-import livingRoom from '../../assets/living-room.png'
-import office from '../../assets/office.png'
-import shoeCloset from '../../assets/shoe-closet.png'
+import bathRoom from '../../assets/placeBanner/bath-room.jpg'
+import bedRoom from '../../assets/placeBanner/bed-room.jpg'
+import kidsRoom from '../../assets/placeBanner/kids-room.jpg'
+import livingRoom from '../../assets/placeBanner/living-room.jpg'
+import office from '../../assets/placeBanner/office.jpg'
+import shoeCloset from '../../assets/placeBanner/shoe-closet.jpg'
 import { useContext } from 'react'
 import { UserPreference } from '../../App'
 import { useMyScentNavigator } from '../../useMyScentNavigator'
-import { useState } from 'react'
+
 
 const Card = ({ id, image, ...props }) => (
   <Slide id={id} css={css`width: 71%; height: 60%; top: 60%;`} {...props}>
     <img src={image} css={css`width: 100%; height: 100%; object-fit: contain; pointer-events: none;`} onDragStart={() => false} />
   </Slide>
-  
+
 )
 
 export const PlaceChoosing = () => {
-  const [, setUserPreference] = useContext(UserPreference)
+  const [userPreference, setUserPreference] = useContext(UserPreference)
   const myScentNavigator = useMyScentNavigator()
 
   return (
@@ -37,7 +37,7 @@ export const PlaceChoosing = () => {
           justify-content: flex-start;
           align-content: center;
         `}
-          onSelect={place => setUserPreference(preference => ({ ...preference, place }))}
+          onSelect={place => setUserPreference(({ ...userPreference, place }))}
         >
           <Card id='bath-room' image={bathRoom} />
           <Card id='bed-room' image={bedRoom} />
