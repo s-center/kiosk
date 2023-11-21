@@ -1,4 +1,4 @@
-import recipt from '../../assets/recipt.png'
+import recipt from '../../assets/QRimage/recipt.png'
 import { css } from '@emotion/react'
 import { Logo } from '../../components/Logo'
 export const Recipt = () => {

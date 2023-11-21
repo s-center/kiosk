@@ -6,12 +6,12 @@ import { NextPageButton } from '../../components/Button/nextPageButton'
 import { UserPreference } from '../../App.jsx'
 import { useMyScentNavigator } from '../../useMyScentNavigator'
 
-import lovelyLabel from '../../assets/lovely-label.png'
-import positiveLabel from '../../assets/positive-label.png'
-import coldLabel from '../../assets/cold-label.png'
-import calmLabel from '../../assets/calm-label.png'
-import passionateLabel from '../../assets/passionate-label.png'
-import sensualLabel from '../../assets/sensual-label.png'
+import lovelyLabel from '../../assets/label/lovely-label.png'
+import positiveLabel from '../../assets/label/positive-label.png'
+import coldLabel from '../../assets/label/cold-label.png'
+import calmLabel from '../../assets/label/calm-label.png'
+import passionateLabel from '../../assets/label/passionate-label.png'
+import sensualLabel from '../../assets/label/sensual-label.png'
 
 export const KeywordChoosing = () => {
   const [userPreference, setUserPreference] = useContext(UserPreference)
