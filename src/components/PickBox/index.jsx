@@ -2,7 +2,7 @@ import { useContext, useState } from 'react'
 import { css } from '@emotion/react'
 
 import greyDefaultBackground from '../../assets/grey-default-background.png'
-import { UserPreference } from '../../App.jsx';
+import { UserPreference } from '../../App.jsx'
 
 export const PickBox = ( props ) => {
   const [imageOpacity, setImageOpacity] = useState(1)

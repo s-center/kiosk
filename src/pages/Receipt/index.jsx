@@ -9,35 +9,35 @@ import IcarusReceipt from '../../assets/Recipt/icarusReceipt.jpg'
 
 import ProductConfig from '../Product/product-config.json'
 export const Receipt = ({ params: { product } }) => {
-    let whichProduct = '';
+  let whichProduct = ''
 
-    switch (ProductConfig[product]['title']) {
-        case 'ZEUS':
-            whichProduct = JeusReceipt;
-            break;
-        case 'EROS':
-            whichProduct = ErosReceipt;
-            break;
-        case 'ICARUS':
-            whichProduct = IcarusReceipt;
-            break;
-        case 'APHRODITE':
-            whichProduct = AphroditeReceipt;
-            break;
-        case 'ATHENS':
-            whichProduct = AthensReceipt;
-            break;
-        case 'APOLLO':
-            whichProduct = ApolloReceipt;
-            break;
-        default:
-            break;
-    }
+  switch (ProductConfig[product]['title']) {
+  case 'ZEUS':
+    whichProduct = JeusReceipt
+    break
+  case 'EROS':
+    whichProduct = ErosReceipt
+    break
+  case 'ICARUS':
+    whichProduct = IcarusReceipt
+    break
+  case 'APHRODITE':
+    whichProduct = AphroditeReceipt
+    break
+  case 'ATHENS':
+    whichProduct = AthensReceipt
+    break
+  case 'APOLLO':
+    whichProduct = ApolloReceipt
+    break
+  default:
+    break
+  }
 
-    return (
-        <div css={css`width: 100%; height: 100%; background-color: rgb(0, 0, 0);`}>
-            <Logo css={css`width: 40%; position: relative; top: 10%; left: 29%;`} />
-            <img src={whichProduct} alt="Receipt" css={css`position: relative; top: 15%; left: 13.5%;`} />
-        </div>
-    );
-};
+  return (
+    <div css={css`width: 100%; height: 100%; background-color: rgb(0, 0, 0);`}>
+      <Logo css={css`width: 40%; position: relative; top: 10%; left: 29%;`} />
+      <img src={whichProduct} alt="Receipt" css={css`position: relative; top: 15%; left: 13.5%;`} />
+    </div>
+  )
+}
