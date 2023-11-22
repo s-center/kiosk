@@ -84,16 +84,16 @@ export const Myscent = () => {
   return (
 
     <div css={css`
-                height: 100%;
                 width: 100%;
+                height: 100%;
+                
                 display: flex;
                 flex-direction : column;
                 justify-contents: center;
                 align-items: center;`}>
 
-      <img css={css`
-                    height: 100%; 
-                    width: auto;
+      <img css={css`width: 100%;
+                    height: auto;
                     object-fit: contain
                     `}
       src={BackgroundImg}
@@ -108,7 +108,6 @@ export const Myscent = () => {
       <img css={css`
                     position: absolute;
                     top: 15%;
-
                     height:55%;`}
       src={Bottle} alt={Bottle}></img>
 

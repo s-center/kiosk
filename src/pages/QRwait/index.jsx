@@ -11,11 +11,21 @@ export const QRwait = () => {
   setTimeout(redirectToNewPage, 5000) // 7초는 밀리초로 계산됨
   return (
     <div css={css`width:100%; height:100%; background-color: rgb(0,0,0); z-index:0; position: absolute;`}>
-      <img className="rotate-image" src={circle} alt="circle" css={css` z-index:2; position: relative; top:22%; left:8%;`} />
+      <div css={css`
+        position: absolute;
+        top: 50%; 
+        left: 50%;
+        transform: translate(-50%,-50%) ;`}>
+        <img className="rotate-image" src={circle} alt="circle"
+          css={css` 
+            z-index:2;  
+          `} />
+      </div>
       <p css={css`color: rgb(255,255,255); 
             position: absolute;
-            top: 800px; 
-            left:357px; 
+            top: 45%; 
+            left:50%;
+            transform: translate(-50%,-50%) ;
             font-size:50px; 
             z-index:3;
             text-shadow: 5px 5px 30px rgb(255,255,255);
@@ -23,8 +33,9 @@ export const QRwait = () => {
       <p css={css`color: rgb(255,255,255);
 text-shadow: 5px 5px 30px rgb(255,255,255);
             position: absolute;
-            top: 900px; 
-            left:387px; 
+            top: 50%; 
+            left:50%;
+            transform: translate(-50%,-50%) ;
             font-size:50px; 
             font-family: NotoSansKR-Regular;
             z-index:3;`}>생성 중이에요 </p>

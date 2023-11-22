@@ -3,7 +3,7 @@ import { css } from '@emotion/react'
 export const ViewBox = ({ children }) => (
   <div
     css={css`
-      width: 1080px;
+      width: 1200px;
       height: 1920px;
       
       position: absolute;
