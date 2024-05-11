@@ -22,7 +22,7 @@ HEAVENLY COCKTAIL은 신화 속 등장하는 신들의 사연을 향으로 풀�
 # 시연 영상
 ![GIFMaker_me (3)](https://github.com/s-center/kiosk/assets/96658105/073bcd6a-cdd2-41a8-bc4e-eb9bedce8e8b)
 
-[배포 링크](https://heavenly-coctail.netlify.app/starting)
+[heavely cocktail](https://heavenly-coctail.netlify.app)
 
 &nbsp; 
 &nbsp; 
