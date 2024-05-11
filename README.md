@@ -30,7 +30,7 @@ HEAVENLY COCKTAIL은 신화 속 등장하는 신들의 사연을 향으로 풀�
 <br>
 &nbsp; 
 
-# Point 1. Million.js를 활용해 렌더링 최적화
+## Point 1. Million.js를 활용해 렌더링 최적화
 
 기존 DOM => 변경 전 후 DOM 트리를 직접 비교 <br>
 BLOCKDOM => 변경된 부분 추적 트리를 만들어 상태 변경 감지<br>
@@ -42,7 +42,7 @@ BLOCKDOM => 변경된 부분 추적 트리를 만들어 상태 변경 감지<br>
 
 &nbsp; 
 
-# Point 2. 이미지 압축
+## Point 2. 이미지 압축
 &nbsp; 
 &nbsp; 
 
