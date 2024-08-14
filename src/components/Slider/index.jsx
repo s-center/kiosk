@@ -99,7 +99,7 @@ export const Slide = ({ id, onSelect, onDiscard, isFocused, className, children 
         left: 50%;
       
         &:nth-child(1) {
-          transform: translate3d(-50%, -50%, 0px) translateX(${draggedLength}px);
+          transform: translate3d(-50%, -50%, 0px) translateX(var(--draggedLength));
           z-index: 4;
         }
         
@@ -122,6 +122,7 @@ export const Slide = ({ id, onSelect, onDiscard, isFocused, className, children 
         }
       `}
       className={className}
+      style={{ '--draggedLength': `${draggedLength}px` }}
     >
       {children}
     </div>
